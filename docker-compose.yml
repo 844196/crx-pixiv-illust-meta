@@ -1,0 +1,14 @@
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: workspace
+    volumes:
+      - .:/workspaces/chrome-pixiv-bookmark-rate-ext:cached
+      - node_modules:/workspaces/chrome-pixiv-bookmark-rate-ext/node_modules
+    tty: true
+    init: true
+
+volumes:
+  node_modules:

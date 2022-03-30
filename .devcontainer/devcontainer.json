@@ -1,0 +1,15 @@
+{
+  "name": "chrome-pixiv-bookmark-rate-ext",
+  "features": {
+    "common": true,
+  },
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "workspace",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/chrome-pixiv-bookmark-rate-ext",
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib",
+  }
+}
