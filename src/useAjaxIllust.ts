@@ -1,4 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+function useCache<T>(cacheKey: string, fetcher: () => Promise<T>): T | undefined {
+  type Cache = {
+    item: T,
+    expires: number,
+  };
+
+  const [item, setItem] = useState<T>();
+
+  useEffect(() => {
+    (async () => {
+      const cachedRaw = window.sessionStorage.getItem(cacheKey);
+      if (cachedRaw) {
+        const cached: Cache = JSON.parse(cachedRaw);
+        if (cached.expires > new Date().getTime()) {
+          setItem(cached.item);
+          return;
+        }
+      }
+
+      const fetched = await fetcher();
+      window.sessionStorage.setItem(cacheKey, JSON.stringify({
+        item: fetched,
+        expires: new Date().getTime() + (1000 * 60 * 3),
+      }));
+      setItem(fetched);
+    })();
+  }, [cacheKey, setItem, fetcher]);
+
+  return item;
+}
 
 // 参照するプロパティのみ定義
 export type AjaxIllust = {
@@ -9,14 +40,16 @@ export type AjaxIllust = {
 };
 
 export const useAjaxIllust = (illustId: string) => {
-  const [ajaxIllust, setAjaxIllust] = useState<AjaxIllust>();
+  const fetcher = useCallback(
+    () => (
+      fetch(`https://www.pixiv.net/ajax/illust/${illustId}`, { credentials: 'include' })
+        .then<AjaxIllust>((res) => res.json())
+        .then<AjaxIllust>(({ body: { bookmarkCount, viewCount } }) => ({ body: { bookmarkCount, viewCount }}))
+    ),
+    [illustId],
+  );
 
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(`https://www.pixiv.net/ajax/illust/${illustId}`, { credentials: 'include' }).then<AjaxIllust>((res) => res.json());
-      setAjaxIllust(res);
-    })();
-  }, [illustId, setAjaxIllust]);
+  const ajaxIllust = useCache(`chrome-pixiv-bookmark-rate-ext-${illustId}`, fetcher);
 
   return ajaxIllust;
 };
