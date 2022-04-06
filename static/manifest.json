@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Pixiv Bookmark Rate Extension",
   "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
