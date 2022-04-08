@@ -4,7 +4,7 @@
     "common": true,
   },
   "dockerComposeFile": [
-    "../docker-compose.yml",
+    "./docker-compose.yml",
   ],
   "service": "workspace",
   "remoteUser": "node",
