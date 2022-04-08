@@ -1,5 +1,11 @@
 import { Widget } from './Widget';
 import { render } from 'react-dom';
+import { extend, locale } from 'dayjs';
+import 'dayjs/locale/ja';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+locale('ja');
+extend(relativeTime);
 
 function main() {
   [...document.querySelectorAll('div[type]')].forEach(async (div) => {
@@ -9,9 +15,6 @@ function main() {
     }
 
     a.setAttribute('data-done', 'yes');
-
-    const br = document.createElement('br');
-    a.appendChild(br);
 
     const span = document.createElement('span');
     a.appendChild(span);
