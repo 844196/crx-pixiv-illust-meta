@@ -6,6 +6,7 @@ export type AjaxIllust = {
   body: {
     bookmarkCount: number,
     viewCount: number,
+    createDate: string, // ISO8601
   },
 };
 
@@ -14,7 +15,7 @@ export const useAjaxIllust = (illustId: string) => {
     () => (
       fetch(`https://www.pixiv.net/ajax/illust/${illustId}`, { credentials: 'include' })
         .then<AjaxIllust>((res) => res.json())
-        .then<AjaxIllust>(({ body: { bookmarkCount, viewCount } }) => ({ body: { bookmarkCount, viewCount }}))
+        .then<AjaxIllust>(({ body: { bookmarkCount, viewCount, createDate } }) => ({ body: { bookmarkCount, viewCount, createDate }}))
     ),
     [illustId],
   );
