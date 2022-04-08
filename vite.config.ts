@@ -1,20 +1,11 @@
-import path from 'path';
 import react from '@vitejs/plugin-react';
+import { chromeExtension } from 'rollup-plugin-chrome-extension';
 import { defineConfig } from 'vite';
+import { manifest } from './manifest.config';
 
 export default defineConfig({
-  plugins: [react()],
-  publicDir: 'static',
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'src/main.tsx'),
-      },
-      output: {
-        entryFileNames: '[name].js',
-        manualChunks: {},
-        format: 'iife',
-      },
-    },
-  },
+  plugins: [
+    react(),
+    chromeExtension({ manifest }),
+  ],
 });

@@ -1,7 +1,8 @@
-// @ts-check
+// @ts-expect-error
+import main from './main?script';
 
 chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
-  if (!/https:\/\/www\.pixiv\.net/.test(url)) {
+  if (!/https:\/\/www\.pixiv\.net/.test(url ?? '')) {
     return;
   }
   if (status === 'complete') {
@@ -10,6 +11,6 @@ chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
 
   chrome.scripting.executeScript({
     target: { tabId },
-    files: ['main.js'],
+    files: [main],
   });
 });
