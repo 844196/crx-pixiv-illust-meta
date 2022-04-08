@@ -4,7 +4,8 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "please_use_yarn_instead"
   },
   "scripts": {
     "build": "vite build"
