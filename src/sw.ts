@@ -1,5 +1,5 @@
 // @ts-expect-error
-import main from './main?script';
+import illustMetaInfo from './features/illust-meta-info?script';
 
 chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
   if (!/https:\/\/www\.pixiv\.net/.test(url ?? '')) {
@@ -11,6 +11,6 @@ chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
 
   chrome.scripting.executeScript({
     target: { tabId },
-    files: [main],
+    files: [illustMetaInfo],
   });
 });
