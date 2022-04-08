@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.tag }}
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: yarn install --no-progress --frozen-lockfile --network-timeout 600000
+      - run: yarn build
+      - name: Copy license file
+        run: cp LICENSE.md dist
+      - name: Rename directory for zip
+        run: mv dist chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}
+      - name: Zip
+        uses: TheDoctor0/zip-release@0.6.2
+        with:
+          path: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}
+          type: zip
+          filename: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}.zip
+      - name: Create release draft
+        uses: ncipollo/release-action@v1.10.0
+        with:
+          name: ${{ github.event.inputs.tag }}
+          tag: ${{ github.event.inputs.tag }}
+          draft: true
+          artifacts: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
