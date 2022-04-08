@@ -1,8 +1,17 @@
 {
+  "private": true,
   "name": "chrome-pixiv-bookmark-rate-ext",
   "version": "0.0.2",
   "license": "MIT",
-  "private": true,
+  "author": "Masaya Takeda <844196@gmail.com>",
+  "homepage": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext"
+  },
+  "bugs": {
+    "url": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext/issues"
+  },
   "engines": {
     "node": "16.x",
     "npm": "please_use_yarn_instead"
