@@ -17,6 +17,7 @@
     "npm": "please_use_yarn_instead"
   },
   "scripts": {
+    "ci": "tsc",
     "build": "vite build"
   },
   "dependencies": {
