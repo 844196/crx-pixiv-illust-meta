@@ -1,10 +1,10 @@
 import { defineManifest } from 'rollup-plugin-chrome-extension';
-import { version, author, homepage as homepage_url } from './package.json';
+import { displayName as name, description, version, author, homepage as homepage_url } from './package.json';
 
 export const manifest = defineManifest({
   manifest_version: 3,
-  name: 'Pixiv Bookmark Rate Extension',
-  description: '作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します',
+  name,
+  description,
   author,
   version,
   homepage_url,
