@@ -1,6 +1,8 @@
 {
   "private": true,
   "name": "chrome-pixiv-bookmark-rate-ext",
+  "displayName": "Pixiv Bookmark Rate Extension",
+  "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
   "version": "0.0.5",
   "license": "MIT",
   "author": "Masaya Takeda <844196@gmail.com>",
