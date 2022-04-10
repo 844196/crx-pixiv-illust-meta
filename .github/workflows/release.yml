@@ -1,41 +1,63 @@
 name: Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Tag
-        required: true
+  push:
+    tags:
+      - '*'
+
+env:
+  archive_basename_prefix: chrome-pixiv-bookmark-rate-ext
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout tag
+      - name: Get version
+        id: get_version
+        uses: battila7/get-version-action@v2.2.1
+
+      - name: Compute archive basename
+        id: context
+        run: echo ::set-output name=archive_basename::${{ env.archive_basename_prefix }}-${{ steps.get_version.outputs.version }}
+
+      - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.inputs.tag }}
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: yarn install --no-progress --frozen-lockfile --network-timeout 600000
-      - run: yarn build
+
+      - name: Build
+        run: |
+          yarn install --no-progress --frozen-lockfile --network-timeout 600000
+          yarn build
+
       - name: Copy license file
         run: cp LICENSE.md dist
-      - name: Rename directory for zip
-        run: mv dist chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}
-      - name: Zip
+
+      - name: Rename directory for archive
+        run: mv dist ${{ steps.context.outputs.archive_basename }}
+
+      - name: Make tarball
         uses: TheDoctor0/zip-release@0.6.2
         with:
-          path: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}
+          path: ${{ steps.context.outputs.archive_basename }}
+          type: tar
+          filename: ${{ steps.context.outputs.archive_basename }}.tar.gz
+
+      - name: Make zipball
+        uses: TheDoctor0/zip-release@0.6.2
+        with:
+          path: ${{ steps.context.outputs.archive_basename }}
           type: zip
-          filename: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}.zip
+          filename: ${{ steps.context.outputs.archive_basename }}.zip
+
       - name: Create release draft
         uses: ncipollo/release-action@v1.10.0
         with:
-          name: ${{ github.event.inputs.tag }}
-          tag: ${{ github.event.inputs.tag }}
+          name: ${{ steps.get_version.outputs.version }}
+          prerelease: ${{ steps.get_version.outputs.isPrerelease }}
           draft: true
-          artifacts: chrome-pixiv-bookmark-rate-ext-${{ github.event.inputs.tag }}.zip
+          artifacts: '${{ steps.context.outputs.archive_basename }}.*'
           token: ${{ secrets.GITHUB_TOKEN }}
