@@ -3,11 +3,6 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
-  ],
-  "packageRules": [
-    {
-      "extends": ["group:definitelyTyped"],
-      "automerge": true,
-    },
+    ":automergeTypes",
   ],
 }
