@@ -24,4 +24,4 @@ function main() {
   });
 }
 
-window.setInterval(main, 1000);
+window.setInterval(main, 16.6);
