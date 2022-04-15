@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches:
+      # SEE: https://stackoverflow.com/a/57903434
       - '*'
   pull_request:
 
@@ -16,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+          cache: yarn
       - run: yarn install --no-progress --frozen-lockfile --network-timeout 600000
       - run: yarn ci
       - run: yarn build
