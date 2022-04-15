@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3-labs
 
-FROM node:16-bullseye as base
+FROM node:17-bullseye as base
 
 # --------------------------------------------------------------------------------
 
