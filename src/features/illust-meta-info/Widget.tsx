@@ -17,7 +17,12 @@ const WidgetItem: VFC<{ children: ReactNode }> = ({ children }) => (
 export const Widget: VFC<{ illustId: string }> = ({ illustId }) => {
   const ajaxIllust = useAjaxIllust(illustId);
   if (!ajaxIllust) {
-    return null;
+    return (
+      <>
+        <WidgetLayout>&nbsp;</WidgetLayout>
+        <WidgetLayout>&nbsp;</WidgetLayout>
+      </>
+    );
   }
 
   const { body: { viewCount, bookmarkCount }} = ajaxIllust;
