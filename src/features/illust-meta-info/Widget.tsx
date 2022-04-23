@@ -1,20 +1,20 @@
-import { ReactNode, VFC } from 'react';
+import { ReactNode, FC } from 'react';
 import { useAjaxIllust } from './useAjaxIllust';
 import dayjs from 'dayjs';
 
-const WidgetLayout: VFC<{ children: ReactNode }> = ({ children }) => (
+const WidgetLayout: FC<{ children: ReactNode }> = ({ children }) => (
   <span style={{ display: 'flex', gap: '.5em', color: '#858585', fontSize: '13px' }}>
     {children}
   </span>
 );
 
-const WidgetItem: VFC<{ children: ReactNode }> = ({ children }) => (
+const WidgetItem: FC<{ children: ReactNode }> = ({ children }) => (
   <span style={{ display: 'inline-flex', gap: '.25em', alignItems: 'center' }}>
     {children}
   </span>
 );
 
-export const Widget: VFC<{ illustId: string }> = ({ illustId }) => {
+export const Widget: FC<{ illustId: string }> = ({ illustId }) => {
   const ajaxIllust = useAjaxIllust(illustId);
   if (!ajaxIllust) {
     return (
