@@ -15,7 +15,7 @@
     "url": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext/issues"
   },
   "engines": {
-    "node": "16.x",
+    "node": "18.x",
     "npm": "please_use_yarn_instead"
   },
   "scripts": {
