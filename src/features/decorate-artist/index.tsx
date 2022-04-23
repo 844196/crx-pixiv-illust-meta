@@ -1,4 +1,4 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { ArtistBadge } from './ArtistBadge';
 
 function main() {
@@ -13,11 +13,11 @@ function main() {
 
     a.setAttribute('data-has-artist-badge', 'yes');
 
-    const root = document.createElement('span');
-    a.appendChild(root);
+    const container = document.createElement('span');
+    a.appendChild(container);
 
     const userId = a.getAttribute('data-gtm-value') ?? '';
-    render(<ArtistBadge userId={userId} />, root);
+    createRoot(container).render(<ArtistBadge userId={userId} />);
   });
 }
 

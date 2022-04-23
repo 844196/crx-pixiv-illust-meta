@@ -1,5 +1,5 @@
 import { Widget } from './Widget';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { extend, locale } from 'dayjs';
 import 'dayjs/locale/ja';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -16,11 +16,11 @@ function main() {
 
     a.setAttribute('data-done', 'yes');
 
-    const span = document.createElement('span');
-    a.appendChild(span);
+    const container = document.createElement('span');
+    a.appendChild(container);
 
     const [_, illustId] = (/artworks\/([0-9]+)/.exec(a.getAttribute('href') ?? '') ?? []);
-    render(<Widget illustId={illustId} />, span);
+    createRoot(container).render(<Widget illustId={illustId} />);
   });
 }
 
