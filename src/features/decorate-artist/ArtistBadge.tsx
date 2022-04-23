@@ -1,7 +1,7 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { useAjaxUser } from './useAjaxUser';
 
-export const ArtistBadge: VFC<{ userId: string }> = ({ userId }) => {
+export const ArtistBadge: FC<{ userId: string }> = ({ userId }) => {
   const ajaxUser = useAjaxUser(userId);
   if (!ajaxUser) {
     return null;
