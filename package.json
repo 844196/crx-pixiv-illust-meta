@@ -19,7 +19,9 @@
     "npm": "please_use_yarn_instead"
   },
   "scripts": {
-    "ci": "tsc",
+    "ci": "run-p ci:*",
+    "ci:type": "tsc",
+    "ci:lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "build": "vite build"
   },
   "dependencies": {
@@ -33,7 +35,17 @@
     "@types/node": "16.11.27",
     "@types/react": "18.0.6",
     "@types/react-dom": "18.0.2",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
+    "@typescript-eslint/parser": "5.20.0",
     "@vitejs/plugin-react": "1.3.1",
+    "eslint": "8.13.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.4.0",
+    "npm-run-all": "4.1.5",
     "rollup-plugin-chrome-extension": "4.0.1-24",
     "typescript": "4.6.3",
     "vite": "2.9.5"

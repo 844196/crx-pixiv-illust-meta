@@ -10,7 +10,17 @@
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/chrome-pixiv-bookmark-rate-ext",
   "postCreateCommand": "yarn install",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+  ],
   "settings": {
     "typescript.tsdk": "node_modules/typescript/lib",
-  }
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    },
+    "files.associations": {
+      "**/.github/renovate.json5": "jsonc",
+    },
+    "eslint.runtime": "/usr/local/bin/node",
+  },
 }

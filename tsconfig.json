@@ -4,5 +4,11 @@
     "skipLibCheck": true,
     "types": ["vite/client", "chrome"],
     "jsx": "react-jsx",
-  }
+  },
+  "include": [
+    "src/**/*",
+    ".eslintrc.js",
+    "manifest.config.ts",
+    "vite.config.ts",
+  ],
 }

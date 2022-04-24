@@ -12,7 +12,7 @@ export function useCache<T>(cacheKey: string, fetcher: () => Promise<T>): T | un
     (async () => {
       const cachedRaw = window.sessionStorage.getItem(cacheKey);
       if (cachedRaw) {
-        const cached: Cache = JSON.parse(cachedRaw);
+        const cached = (JSON.parse(cachedRaw) as Cache);
         if (cached.expires > new Date().getTime()) {
           setItem(cached.item);
           return;
@@ -25,7 +25,7 @@ export function useCache<T>(cacheKey: string, fetcher: () => Promise<T>): T | un
         expires: new Date().getTime() + (1000 * 60 * 3),
       }));
       setItem(fetched);
-    })();
+    })().catch(console.error);
   }, [cacheKey, setItem, fetcher]);
 
   return item;

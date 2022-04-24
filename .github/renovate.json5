@@ -1,8 +1,19 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "commitMessagePrefix": "⬆️ ",
   "extends": [
     "config:base",
     "group:allNonMajor",
-    ":automergeTypes",
+    ":automergeTypes"
   ],
+  "packageRules": [
+    {
+      "groupName": "linters",
+      "extends": ["packages:linters"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    }
+  ]
 }

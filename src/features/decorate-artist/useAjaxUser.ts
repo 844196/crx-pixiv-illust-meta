@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { useCache } from '../../hooks/useCache';
 
 // 参照するプロパティのみ定義
@@ -19,7 +20,7 @@ export type AjaxUser = {
         [novelId: string]: null,
       }
     ),
-    novelSeries: any[],
+    novelSeries: unknown[],
   },
 };
 
@@ -28,7 +29,7 @@ export const useAjaxUser = (userId: string) => {
     () => (
       fetch(`https://www.pixiv.net/ajax/user/${userId}/profile/all`, { credentials: 'include' })
         .then<AjaxUser>((res) => res.json())
-        .then<AjaxUser>(({ body: { illusts, novels, novelSeries } }) => ({ body: { illusts, novels, novelSeries }}))
+        .then<AjaxUser>(({ body: { illusts, novels, novelSeries } }) => ({ body: { illusts, novels, novelSeries } }))
     ),
     [userId],
   );

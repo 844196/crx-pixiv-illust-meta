@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { useCache } from '../../hooks/useCache';
 
 // 参照するプロパティのみ定義
@@ -15,7 +16,7 @@ export const useAjaxIllust = (illustId: string) => {
     () => (
       fetch(`https://www.pixiv.net/ajax/illust/${illustId}`, { credentials: 'include' })
         .then<AjaxIllust>((res) => res.json())
-        .then<AjaxIllust>(({ body: { bookmarkCount, viewCount, createDate } }) => ({ body: { bookmarkCount, viewCount, createDate }}))
+        .then<AjaxIllust>(({ body: { bookmarkCount, viewCount, createDate } }) => ({ body: { bookmarkCount, viewCount, createDate } }))
     ),
     [illustId],
   );
