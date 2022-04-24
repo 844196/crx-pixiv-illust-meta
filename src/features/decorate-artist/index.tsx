@@ -1,8 +1,9 @@
 import { createRoot } from 'react-dom/client';
+
 import { ArtistBadge } from './ArtistBadge';
 
 function main() {
-  if (!/https:\/\/www\.pixiv\.net\/users\/\d+\/followers/.test(location.href)) {
+  if (!/https:\/\/www\.pixiv\.net\/users\/\d+\/followers/.test(window.location.href)) {
     return;
   }
 
