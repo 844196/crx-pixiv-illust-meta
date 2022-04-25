@@ -16,9 +16,9 @@ export const manifest = defineManifest({
   version,
   homepage_url,
   icons: {
-    16: 'icons/icon16.png',
-    48: 'icons/icon48.png',
-    128: 'icons/icon128.png',
+    16: 'assets/icon16.png',
+    48: 'assets/icon48.png',
+    128: 'assets/icon128.png',
   },
   permissions: [
     'tabs',

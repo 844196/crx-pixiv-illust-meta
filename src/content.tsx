@@ -1,12 +1,7 @@
-import { extend, locale } from 'dayjs';
-import 'dayjs/locale/ja';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import { createRoot } from 'react-dom/client';
 
-import { Widget } from './Widget';
-
-locale('ja');
-extend(relativeTime);
+import { App } from './App';
+import './vendors/setup-dayjs';
 
 function main() {
   [...document.querySelectorAll('div[type]')].forEach((div) => {
@@ -21,7 +16,7 @@ function main() {
     a.appendChild(container);
 
     const illustId = (/artworks\/([0-9]+)/.exec(a.getAttribute('href') ?? '') ?? [])[1];
-    createRoot(container).render(<Widget illustId={illustId} />);
+    createRoot(container).render(<App illustId={illustId} />);
   });
 }
 
