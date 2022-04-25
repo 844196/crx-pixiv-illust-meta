@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { ReactNode } from 'react';
 
-import { useAjaxIllust } from './useAjaxIllust';
+import { useAjaxIllust } from './hooks/useAjaxIllust';
 
 function WidgetLayout({ children }: { children: ReactNode }) {
   return (
@@ -26,7 +26,7 @@ function WidgetItem({ children }: { children: ReactNode }) {
   );
 }
 
-export function Widget({ illustId }: { illustId: string }) {
+export function App({ illustId }: { illustId: string }) {
   const ajaxIllust = useAjaxIllust(illustId);
   if (!ajaxIllust) {
     return (

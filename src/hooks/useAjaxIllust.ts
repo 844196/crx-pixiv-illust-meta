@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useCache } from '../../hooks/useCache';
+import { useCache } from './useCache';
 
 // 参照するプロパティのみ定義
 export type AjaxIllust = {

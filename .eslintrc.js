@@ -34,6 +34,7 @@ module.exports = {
           order: 'asc',
           caseInsensitive: true,
         },
+        warnOnUnassignedImports: true,
       },
     ],
     'sort-imports': [
