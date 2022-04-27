@@ -44,6 +44,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
   },
   overrides: [
     {
