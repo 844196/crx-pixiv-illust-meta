@@ -51,6 +51,7 @@ module.exports = {
       files: [
         'manifest.config.ts',
         'vite.config.ts',
+        'vitest.setup.*',
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
