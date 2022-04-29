@@ -2,7 +2,7 @@
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "skipLibCheck": true,
-    "types": ["vite/client", "chrome"],
+    "types": ["vite/client", "vitest", "vitest/globals", "chrome"],
     "jsx": "react-jsx",
   },
   "include": [
@@ -10,5 +10,6 @@
     ".eslintrc.js",
     "manifest.config.ts",
     "vite.config.ts",
+    "vitest.setup.*"
   ],
 }

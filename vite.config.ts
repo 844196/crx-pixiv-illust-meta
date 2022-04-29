@@ -9,4 +9,10 @@ export default defineConfig({
     react(),
     chromeExtension({ manifest }),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './vitest.setup.ts',
+    globalSetup: './vitest.setup.global.ts',
+  },
 });

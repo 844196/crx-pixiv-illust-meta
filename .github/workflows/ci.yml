@@ -20,5 +20,6 @@ jobs:
           node-version: '18'
           cache: yarn
       - run: yarn install --no-progress --frozen-lockfile --network-timeout 600000
-      - run: yarn ci
+      - run: yarn lint
+      - run: yarn test
       - run: yarn build
