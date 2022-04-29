@@ -19,9 +19,10 @@
     "npm": "please_use_yarn_instead"
   },
   "scripts": {
-    "ci": "run-p ci:*",
-    "ci:type": "tsc",
-    "ci:lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint": "run-s --continue-on-error lint:*",
+    "lint:tsc": "tsc --noEmit",
+    "lint:eslint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "test": "vitest",
     "build": "vite build"
   },
   "dependencies": {
