@@ -2803,10 +2803,10 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-rollup-plugin-chrome-extension@4.0.1-24:
-  version "4.0.1-24"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-chrome-extension/-/rollup-plugin-chrome-extension-4.0.1-24.tgz#bed989647741d8b966a3094f8835aa6804d3cce0"
-  integrity sha512-Izfhe9zx7es8ElAr0QftXO8zJP8Fxo/aRAmYHx4HNBgyc4J5cFfGacZY7q0SmHS5GdPnIZodV/6R0qIcOqnBQA==
+rollup-plugin-chrome-extension@4.0.1-25:
+  version "4.0.1-25"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-chrome-extension/-/rollup-plugin-chrome-extension-4.0.1-25.tgz#73c7312a46f863354f0e9549bbfaf6fc205a9526"
+  integrity sha512-XBhAvWM0XnT5fW1y18kx+J/16fWakmIGJGrLSI10XDaT924JYaVOlYLLN8DrRtAheFpEHBQfQvGbH2SO9QJoIg==
   dependencies:
     "@rollup/pluginutils" "^4.1.2"
     "@webcomponents/custom-elements" "^1.5.0"
@@ -2821,14 +2821,21 @@ rollup-plugin-chrome-extension@4.0.1-24:
     magic-string "^0.26.0"
     picocolors "^1.0.0"
     react-refresh "^0.12.0"
-    rollup "^2.68.0"
+    rollup "^2.70.2"
   optionalDependencies:
     "@vitejs/plugin-react" "^1.2.0"
 
-rollup@^2.59.0, rollup@^2.68.0:
+rollup@^2.59.0:
   version "2.70.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.70.1.tgz#824b1f1f879ea396db30b0fc3ae8d2fead93523e"
   integrity sha512-CRYsI5EuzLbXdxC6RnYhOuRdtz4bhejPMSWjsFLfVM/7w/85n2szZv6yExqUXsBdz5KT8eoubeyDUDjhLHEslA==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^2.70.2:
+  version "2.70.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.70.2.tgz#808d206a8851628a065097b7ba2053bd83ba0c0d"
+  integrity sha512-EitogNZnfku65I1DD5Mxe8JYRUCy0hkK5X84IlDtUs+O6JRMpRciXTzyCUuX11b5L5pvjH+OmFXiQ3XjabcXgg==
   optionalDependencies:
     fsevents "~2.3.2"
 
