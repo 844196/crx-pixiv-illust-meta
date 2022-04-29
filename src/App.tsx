@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 
 import * as Icon from './components/Icon';
 import * as Layout from './components/Layout';
+import { Number } from './components/Number';
 import { useAjaxIllust } from './hooks/useAjaxIllust';
 
 export type AppProps = {
@@ -46,11 +47,11 @@ export function App({ illustId }: AppProps) {
       <Layout.Row>
         <Layout.Column>
           <Icon.Eye width="12" height="10" />
-          {viewCount}
+          <Number>{viewCount}</Number>
         </Layout.Column>
         <Layout.Column>
           <Icon.Heart width="10" height="10" />
-          {bookmarkCount}
+          <Number>{bookmarkCount}</Number>
           <span>
             {(viewCount > 0 && bookmarkCount > 0) && (
               <>
