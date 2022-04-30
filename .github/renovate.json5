@@ -4,7 +4,8 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
-    ":automergeTypes"
+    ":automergeTypes",
+    "docker:disableMajor"
   ],
   "packageRules": [
     {
