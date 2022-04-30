@@ -9,7 +9,7 @@
   "service": "workspace",
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/chrome-pixiv-bookmark-rate-ext",
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "npm install",
   "extensions": [
     "dbaeumer.vscode-eslint",
   ],

@@ -27,11 +27,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+          cache: npm
 
       - name: Build
         run: |
-          yarn install --no-progress --frozen-lockfile --network-timeout 600000
-          yarn build
+          npm ci
+          npm run build
 
       - name: Copy license file
         run: cp LICENSE.md dist
