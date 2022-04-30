@@ -17,9 +17,9 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          cache: yarn
-      - run: yarn install --no-progress --frozen-lockfile --network-timeout 600000
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn build
+          node-version: '16'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
