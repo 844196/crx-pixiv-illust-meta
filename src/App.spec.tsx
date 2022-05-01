@@ -4,11 +4,27 @@ import { App } from './App';
 import { mockedIllustIds } from './mocks/db';
 
 describe('<App />', () => {
-  it('存在しない/削除されたとき', async () => {
-    render(<App illustId={mockedIllustIds['存在しない・削除された']} />);
+  describe('存在しない/削除されたとき', () => {
+    const spy = vi.spyOn(console, 'error');
 
-    expect(await screen.findByRole('status')).toBeInTheDocument();
-    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    beforeAll(() => {
+      // ドキッとするので何もしない実装に差し替える
+      spy.mockImplementation(() => { /** NOOP */ });
+    });
+
+    afterAll(() => {
+      spy.mockRestore();
+    });
+
+    it('エラーが表示されること', async () => {
+      render(<App illustId={mockedIllustIds['存在しない・削除された']} />);
+
+      expect(await screen.findByRole('status')).toBeInTheDocument();
+
+      const alert = await screen.findByRole('alert');
+      expect(alert).toBeInTheDocument();
+      expect(alert).toHaveTextContent('該当作品は削除されたか、存在しない作品IDです。');
+    });
   });
 
   it('閲覧数0・ブックマーク数0のとき', async () => {
