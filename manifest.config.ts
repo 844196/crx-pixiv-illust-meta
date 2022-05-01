@@ -1,4 +1,4 @@
-import { defineManifest } from 'rollup-plugin-chrome-extension';
+import { defineManifest } from '@crxjs/vite-plugin';
 
 import {
   author,
