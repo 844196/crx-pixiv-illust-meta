@@ -1,6 +1,5 @@
-import * as Icon from './components/Icon';
-import * as Layout from './components/Layout';
-import { Number } from './components/Number';
+import { ErrorFallback } from './components/ErrorFallback';
+import { IllustMeta, IllustMetaSkeleton } from './components/IllustMeta';
 import { useIllustMeta } from './hooks/useIllustMeta';
 
 export type AppProps = {
@@ -8,56 +7,21 @@ export type AppProps = {
 };
 
 export function App({ illustId }: AppProps) {
-  const { data: meta } = useIllustMeta(illustId);
+  const { data, error } = useIllustMeta(illustId);
 
-  if (!meta) {
+  if (error) {
     return (
-      <Layout.Container data-testid="loading">
-        <Layout.Row>
-          <Layout.Column>&nbsp;</Layout.Column>
-        </Layout.Row>
-        <Layout.Row>
-          <Layout.Column>&nbsp;</Layout.Column>
-        </Layout.Row>
-      </Layout.Container>
+      <ErrorFallback error={error} />
+    );
+  }
+
+  if (!data) {
+    return (
+      <IllustMetaSkeleton />
     );
   }
 
   return (
-    <Layout.Container data-testid="loaded">
-      <Layout.Row>
-        <Layout.Column>
-          <time dateTime={meta.postedAt.toISOString()}>
-            {meta.postedAt.format('YYYY年M月D日 HH:mm')}
-          </time>
-          <span>
-            (
-            <time dateTime={meta.postedAt.toISOString()}>
-              {meta.postedAt.fromNow()}
-            </time>
-            )
-          </span>
-        </Layout.Column>
-      </Layout.Row>
-      <Layout.Row>
-        <Layout.Column>
-          <Icon.Eye width="12" height="10" />
-          <Number>{meta.viewCount}</Number>
-        </Layout.Column>
-        <Layout.Column>
-          <Icon.Heart width="10" height="10" />
-          <Number>{meta.bookmarkCount}</Number>
-          <span>
-            {(meta.viewCount > 0 && meta.bookmarkCount > 0) && (
-              <>
-                (
-                {((meta.bookmarkCount / meta.viewCount) * 100).toFixed(2)}
-                %)
-              </>
-            )}
-          </span>
-        </Layout.Column>
-      </Layout.Row>
-    </Layout.Container>
+    <IllustMeta {...data} />
   );
 }
