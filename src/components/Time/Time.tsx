@@ -1,16 +1,15 @@
 import { Dayjs } from 'dayjs';
-import { ReactNode } from 'react';
 
-export type TimeProps = {
+export type TimeProps = Omit<JSX.IntrinsicElements['time'], 'dateTime'> & {
   dateTime: Dayjs;
-  children: ReactNode;
 };
 
-export function Time({ dateTime, children }: TimeProps) {
+export function Time({ dateTime, children, ...props }: TimeProps) {
   return (
     <time
       dateTime={dateTime.toISOString()}
       title={dateTime.local().format('lll z')}
+      {...props}
     >
       {children}
     </time>

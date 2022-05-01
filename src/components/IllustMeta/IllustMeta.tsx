@@ -16,12 +16,12 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
     <Layout.Container role="contentinfo">
       <Layout.Row>
         <Layout.Column>
-          <Time dateTime={postedAt}>
+          <Time dateTime={postedAt} data-testid="absoluteTime">
             {postedAt.format('lll')}
           </Time>
           <span>
             (
-            <Time dateTime={postedAt}>
+            <Time dateTime={postedAt} data-testid="relativeTime">
               {postedAt.fromNow()}
             </Time>
             )
@@ -31,20 +31,18 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
       <Layout.Row>
         <Layout.Column>
           <Icon.Eye width="12" height="10" />
-          <Number>{viewCount}</Number>
+          <Number data-testid="viewCount">{viewCount}</Number>
         </Layout.Column>
         <Layout.Column>
           <Icon.Heart width="10" height="10" />
-          <Number>{bookmarkCount}</Number>
-          <span>
-            {(viewCount > 0 && bookmarkCount > 0) && (
-              <>
-                (
-                <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
-                )
-              </>
-            )}
-          </span>
+          <Number data-testid="bookmarkCount">{bookmarkCount}</Number>
+          {(viewCount > 0 && bookmarkCount > 0) && (
+            <span data-testid="bookmarkRate">
+              (
+              <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
+              )
+            </span>
+          )}
         </Layout.Column>
       </Layout.Row>
     </Layout.Container>
