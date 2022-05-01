@@ -1,4 +1,5 @@
 import { useIllustMeta } from '../../hooks/useIllustMeta';
+import { BookmarkRate } from '../BookmarkRate';
 import * as Icon from '../Icon';
 import * as Layout from '../Layout';
 import { Number } from '../Number';
@@ -39,8 +40,8 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
             {(viewCount > 0 && bookmarkCount > 0) && (
               <>
                 (
-                {((bookmarkCount / viewCount) * 100).toFixed(2)}
-                %)
+                <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
+                )
               </>
             )}
           </span>
