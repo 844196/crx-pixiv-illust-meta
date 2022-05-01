@@ -4,7 +4,6 @@
   "extends": [
     "config:base",
     "group:allNonMajor",
-    ":automergeTypes",
     "docker:disableMajor"
   ],
   "packageRules": [
@@ -15,6 +14,14 @@
       "major": {
         "automerge": false
       }
+    },
+    {
+      "groupName": "react",
+      "extends": ["monorepo:react"],
+      "matchPackageNames": [
+        "@types/react",
+        "@types/react-dom"
+      ]
     }
   ]
 }
