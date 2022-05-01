@@ -1,27 +1,19 @@
+import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+
 import { ErrorFallback } from './components/ErrorFallback';
 import { IllustMeta, IllustMetaSkeleton } from './components/IllustMeta';
-import { useIllustMeta } from './hooks/useIllustMeta';
 
 export type AppProps = {
   illustId: string;
 };
 
 export function App({ illustId }: AppProps) {
-  const { data, error } = useIllustMeta(illustId);
-
-  if (error) {
-    return (
-      <ErrorFallback error={error} />
-    );
-  }
-
-  if (!data) {
-    return (
-      <IllustMetaSkeleton />
-    );
-  }
-
   return (
-    <IllustMeta {...data} />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Suspense fallback={<IllustMetaSkeleton />}>
+        <IllustMeta illustId={illustId} />
+      </Suspense>
+    </ErrorBoundary>
   );
 }

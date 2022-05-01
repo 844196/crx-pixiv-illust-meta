@@ -24,19 +24,20 @@ const fetcher = async (illustId: string): Promise<AjaxIllustResponse> => {
 };
 
 export type UseIllustMetaReturn = {
-  error?: Error,
-  data?: IllustMeta,
+  data: IllustMeta,
 };
 
 export function useIllustMeta(illustId: string): UseIllustMetaReturn {
-  const { data, error } = useSWR<AjaxIllustResponse, Error>(illustId, fetcher);
+  const { data } = useSWR<AjaxIllustResponse, Error>(illustId, fetcher, { suspense: true });
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { viewCount, bookmarkCount, createDate } = data!.body;
 
   return {
-    error,
-    data: data ? {
-      viewCount: data.body.viewCount,
-      bookmarkCount: data.body.bookmarkCount,
-      postedAt: dayjs(data.body.createDate),
-    } : undefined,
+    data: {
+      viewCount,
+      bookmarkCount,
+      postedAt: dayjs(createDate),
+    },
   };
 }

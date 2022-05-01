@@ -1,11 +1,15 @@
-import { IllustMeta as IllustMetaType } from '../../types/IllustMeta';
+import { useIllustMeta } from '../../hooks/useIllustMeta';
 import * as Icon from '../Icon';
 import * as Layout from '../Layout';
 import { Number } from '../Number';
 
-export type IllustMetaProps = IllustMetaType;
+export type IllustMetaProps = {
+  illustId: string
+};
 
-export function IllustMeta({ viewCount, bookmarkCount, postedAt }: IllustMetaProps) {
+export function IllustMeta({ illustId }: IllustMetaProps) {
+  const { data: { viewCount, bookmarkCount, postedAt } } = useIllustMeta(illustId);
+
   return (
     <Layout.Container role="contentinfo">
       <Layout.Row>
