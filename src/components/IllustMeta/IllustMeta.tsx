@@ -2,6 +2,7 @@ import { useIllustMeta } from '../../hooks/useIllustMeta';
 import * as Icon from '../Icon';
 import * as Layout from '../Layout';
 import { Number } from '../Number';
+import { Time } from '../Time';
 
 export type IllustMetaProps = {
   illustId: string
@@ -14,14 +15,14 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
     <Layout.Container role="contentinfo">
       <Layout.Row>
         <Layout.Column>
-          <time dateTime={postedAt.toISOString()}>
-            {postedAt.format('YYYY年M月D日 HH:mm')}
-          </time>
+          <Time dateTime={postedAt}>
+            {postedAt.format('lll')}
+          </Time>
           <span>
             (
-            <time dateTime={postedAt.toISOString()}>
+            <Time dateTime={postedAt}>
               {postedAt.fromNow()}
-            </time>
+            </Time>
             )
           </span>
         </Layout.Column>
