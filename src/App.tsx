@@ -1,18 +1,16 @@
-import dayjs from 'dayjs';
-
 import * as Icon from './components/Icon';
 import * as Layout from './components/Layout';
 import { Number } from './components/Number';
-import { useAjaxIllust } from './hooks/useAjaxIllust';
+import { useIllustMeta } from './hooks/useIllustMeta';
 
 export type AppProps = {
   illustId: string;
 };
 
 export function App({ illustId }: AppProps) {
-  const ajaxIllust = useAjaxIllust(illustId);
+  const { data: meta } = useIllustMeta(illustId);
 
-  if (!ajaxIllust) {
+  if (!meta) {
     return (
       <Layout.Container data-testid="loading">
         <Layout.Row>
@@ -25,20 +23,17 @@ export function App({ illustId }: AppProps) {
     );
   }
 
-  const { body: { viewCount, bookmarkCount } } = ajaxIllust;
-  const createDate = dayjs(ajaxIllust.body.createDate);
-
   return (
     <Layout.Container data-testid="loaded">
       <Layout.Row>
         <Layout.Column>
-          <time dateTime={createDate.toISOString()}>
-            {createDate.format('YYYY年M月D日 HH:mm')}
+          <time dateTime={meta.postedAt.toISOString()}>
+            {meta.postedAt.format('YYYY年M月D日 HH:mm')}
           </time>
           <span>
             (
-            <time dateTime={createDate.toISOString()}>
-              {createDate.fromNow()}
+            <time dateTime={meta.postedAt.toISOString()}>
+              {meta.postedAt.fromNow()}
             </time>
             )
           </span>
@@ -47,16 +42,16 @@ export function App({ illustId }: AppProps) {
       <Layout.Row>
         <Layout.Column>
           <Icon.Eye width="12" height="10" />
-          <Number>{viewCount}</Number>
+          <Number>{meta.viewCount}</Number>
         </Layout.Column>
         <Layout.Column>
           <Icon.Heart width="10" height="10" />
-          <Number>{bookmarkCount}</Number>
+          <Number>{meta.bookmarkCount}</Number>
           <span>
-            {(viewCount > 0 && bookmarkCount > 0) && (
+            {(meta.viewCount > 0 && meta.bookmarkCount > 0) && (
               <>
                 (
-                {((bookmarkCount / viewCount) * 100).toFixed(2)}
+                {((meta.bookmarkCount / meta.viewCount) * 100).toFixed(2)}
                 %)
               </>
             )}

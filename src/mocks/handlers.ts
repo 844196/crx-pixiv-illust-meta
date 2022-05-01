@@ -1,9 +1,11 @@
 import { rest } from 'msw';
 
+import { AjaxIllustErrorResponse, AjaxIllustResponse } from '../types/AjaxIllust';
+
 import { db } from './db';
 
 export const handlers = [
-  rest.get<any, { illustId: string }>('https://www.pixiv.net/ajax/illust/:illustId', ({ params: { illustId } }, res, ctx) => {
+  rest.get<any, { illustId: string }, AjaxIllustResponse | AjaxIllustErrorResponse>('https://www.pixiv.net/ajax/illust/:illustId', ({ params: { illustId } }, res, ctx) => {
     const illust = db.illust.findFirst({
       where: {
         id: {
