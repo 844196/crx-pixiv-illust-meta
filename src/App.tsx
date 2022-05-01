@@ -14,7 +14,7 @@ export function App({ illustId }: AppProps) {
 
   if (!ajaxIllust) {
     return (
-      <Layout.Container>
+      <Layout.Container data-testid="loading">
         <Layout.Row>
           <Layout.Column>&nbsp;</Layout.Column>
         </Layout.Row>
@@ -29,7 +29,7 @@ export function App({ illustId }: AppProps) {
   const createDate = dayjs(ajaxIllust.body.createDate);
 
   return (
-    <Layout.Container>
+    <Layout.Container data-testid="loaded">
       <Layout.Row>
         <Layout.Column>
           <time dateTime={createDate.toISOString()}>

@@ -1,12 +1,8 @@
-import { ReactNode } from 'react';
+export type ColumnProps = JSX.IntrinsicElements['span'];
 
-export type ColumnProps = {
-  children?: ReactNode;
-};
-
-export function Column({ children }: ColumnProps) {
+export function Column({ children, ...props }: ColumnProps) {
   return (
-    <span style={{ display: 'inline-flex', gap: '.25em', alignItems: 'center' }}>
+    <span style={{ display: 'inline-flex', gap: '.25em', alignItems: 'center' }} {...props}>
       {children}
     </span>
   );

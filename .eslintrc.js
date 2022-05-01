@@ -45,16 +45,27 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   overrides: [
     {
       files: [
+        'src/mocks/*',
         'manifest.config.ts',
         'vite.config.ts',
         'vitest.setup.*',
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: [
+        'src/mocks/handlers.ts',
+        '*.spec.ts*',
+      ],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
       },
     },
   ],

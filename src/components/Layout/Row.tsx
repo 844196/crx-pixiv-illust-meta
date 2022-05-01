@@ -1,16 +1,8 @@
-import { ReactElement } from 'react';
+export type RowProps = JSX.IntrinsicElements['span'];
 
-import type { ColumnProps } from './Column';
-
-export type RowProps = {
-  children:
-  | ReactElement<ColumnProps>
-  | ReactElement<ColumnProps>[];
-};
-
-export function Row({ children }: RowProps) {
+export function Row({ children, ...props }: RowProps) {
   return (
-    <span style={{ display: 'inline-flex', gap: '.5em', alignItems: 'center' }}>
+    <span style={{ display: 'inline-flex', gap: '.5em', alignItems: 'center' }} {...props}>
       {children}
     </span>
   );
