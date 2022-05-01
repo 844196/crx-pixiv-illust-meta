@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 
 import { App } from './App';
 import './vendors/setup-dayjs';
@@ -16,7 +16,7 @@ function main() {
     a.appendChild(container);
 
     const illustId = (/artworks\/([0-9]+)/.exec(a.getAttribute('href') ?? '') ?? [])[1];
-    createRoot(container).render(<App illustId={illustId} />);
+    render(<App illustId={illustId} />, container);
   });
 }
 
