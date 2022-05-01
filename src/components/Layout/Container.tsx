@@ -1,14 +1,6 @@
-import { ReactElement } from 'react';
+export type ContainerProps = JSX.IntrinsicElements['span'];
 
-import type { RowProps } from './Row';
-
-type ContainerProps = {
-  children:
-  | ReactElement<RowProps>
-  | ReactElement<RowProps>[];
-};
-
-export function Container({ children }: ContainerProps) {
+export function Container({ children, ...props }: ContainerProps) {
   return (
     <span
       style={{
@@ -17,6 +9,7 @@ export function Container({ children }: ContainerProps) {
         fontSize: '13px',
         color: '#858585',
       }}
+      {...props}
     >
       {children}
     </span>
