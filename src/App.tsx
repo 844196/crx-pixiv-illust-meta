@@ -3,9 +3,10 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { ErrorFallback } from './components/ErrorFallback';
 import { IllustMeta, IllustMetaSkeleton } from './components/IllustMeta';
+import { IllustId } from './types/IllustId';
 
 export type AppProps = {
-  illustId: string;
+  illustId: IllustId;
 };
 
 export function App({ illustId }: AppProps) {

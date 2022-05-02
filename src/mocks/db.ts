@@ -1,5 +1,7 @@
 import { factory, primaryKey } from '@mswjs/data';
 
+import { IllustIdSchema } from '../types/IllustId';
+
 export const db = factory({
   illust: {
     id: primaryKey(String),
@@ -10,10 +12,10 @@ export const db = factory({
 });
 
 export const mockedIllustIds = {
-  '存在しない・削除された': '0',
-  '閲覧数0・ブックマーク数0': '123',
-  '閲覧数1・ブックマーク数0': '456',
-  '閲覧数1・ブックマーク数1': '789',
+  '存在しない・削除された': IllustIdSchema.parse('0'),
+  '閲覧数0・ブックマーク数0': IllustIdSchema.parse('123'),
+  '閲覧数1・ブックマーク数0': IllustIdSchema.parse('456'),
+  '閲覧数1・ブックマーク数1': IllustIdSchema.parse('789'),
 } as const;
 
 db.illust.create({

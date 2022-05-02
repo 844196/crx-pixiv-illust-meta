@@ -1,5 +1,6 @@
 import useSWR from 'swr';
 
+import { IllustId } from '../../types/IllustId';
 import { IllustMeta } from '../../types/IllustMeta';
 
 import { fetcher } from './fetcher';
@@ -8,7 +9,7 @@ export type UseIllustMetaReturn = {
   data: IllustMeta,
 };
 
-export function useIllustMeta(illustId: string): UseIllustMetaReturn {
+export function useIllustMeta(illustId: IllustId): UseIllustMetaReturn {
   const { data } = useSWR<IllustMeta, Error>(illustId, fetcher, { suspense: true });
 
   return {
