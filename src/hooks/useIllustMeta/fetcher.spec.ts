@@ -3,6 +3,7 @@ import { rest } from 'msw';
 
 import { db, mockedIllustIds } from '../../mocks/db';
 import { server } from '../../mocks/server';
+import { IllustIdSchema } from '../../types/IllustId';
 import { IllustMeta } from '../../types/IllustMeta';
 
 import { fetcher } from './fetcher';
@@ -14,7 +15,7 @@ describe('fetcher', () => {
     });
 
     it('未知のエラーの場合は、フォールバックエラー文言のErrorが送出されること', async () => {
-      const illustId = '844196';
+      const illustId = IllustIdSchema.parse('844196');
 
       server.use(
         rest.get(`https://www.pixiv.net/ajax/illust/${illustId}`, (_, res, ctx) => res(

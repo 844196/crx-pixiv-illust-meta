@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import dayjs from 'dayjs';
 
 import * as hook from '../../hooks/useIllustMeta';
+import { IllustIdSchema } from '../../types/IllustId';
 
 import { IllustMeta } from './IllustMeta';
 
@@ -19,7 +20,7 @@ describe('<IllustMeta />', () => {
 
   describe('閲覧数・ブックマーク数ともに1以上のとき', () => {
     it('ブックマーク率も表示されること', () => {
-      const ILLUST_ID = '64687019';
+      const ILLUST_ID = IllustIdSchema.parse('64687019');
       const spyHook = vi.spyOn(hook, 'useIllustMeta').mockImplementation(() => ({
         data: {
           viewCount: 1559,
@@ -42,7 +43,7 @@ describe('<IllustMeta />', () => {
 
   describe('閲覧数1以上・ブックマーク数0のとき', () => {
     it('ブックマーク率は表示されないこと', () => {
-      const ILLUST_ID = '43514107';
+      const ILLUST_ID = IllustIdSchema.parse('43514107');
       const spyHook = vi.spyOn(hook, 'useIllustMeta').mockImplementation(() => ({
         data: {
           viewCount: 320,
@@ -65,7 +66,7 @@ describe('<IllustMeta />', () => {
 
   describe('閲覧数・ブックマーク数ともに0のとき', () => {
     it('ブックマーク率は表示されないこと', () => {
-      const ILLUST_ID = '90730860835';
+      const ILLUST_ID = IllustIdSchema.parse('90730860835');
       const spyHook = vi.spyOn(hook, 'useIllustMeta').mockImplementation(() => ({
         data: {
           viewCount: 0,

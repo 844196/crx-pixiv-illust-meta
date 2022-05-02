@@ -1,4 +1,5 @@
 import { useIllustMeta } from '../../hooks/useIllustMeta';
+import { IllustId } from '../../types/IllustId';
 import { BookmarkRate } from '../BookmarkRate';
 import * as Icon from '../Icon';
 import * as Layout from '../Layout';
@@ -6,7 +7,7 @@ import { Number } from '../Number';
 import { Time } from '../Time';
 
 export type IllustMetaProps = {
-  illustId: string
+  illustId: IllustId
 };
 
 export function IllustMeta({ illustId }: IllustMetaProps) {
