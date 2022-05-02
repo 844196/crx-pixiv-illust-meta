@@ -29,4 +29,4 @@ function main() {
   });
 }
 
-window.setInterval(main, 16.6);
+new MutationObserver(main).observe(document.body, { childList: true, subtree: true });
