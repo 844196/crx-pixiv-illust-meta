@@ -1,9 +1,7 @@
-export type RowProps = JSX.IntrinsicElements['span'];
+import styled from '@emotion/styled';
 
-export function Row({ children, ...props }: RowProps) {
-  return (
-    <span style={{ display: 'inline-flex', gap: '.5em', alignItems: 'center' }} {...props}>
-      {children}
-    </span>
-  );
-}
+export const Row = styled.span`
+  display: inline-flex;
+  gap: .5em;
+  align-items: center;
+`;

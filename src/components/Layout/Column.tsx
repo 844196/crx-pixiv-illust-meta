@@ -1,9 +1,7 @@
-export type ColumnProps = JSX.IntrinsicElements['span'];
+import styled from '@emotion/styled';
 
-export function Column({ children, ...props }: ColumnProps) {
-  return (
-    <span style={{ display: 'inline-flex', gap: '.25em', alignItems: 'center' }} {...props}>
-      {children}
-    </span>
-  );
-}
+export const Column = styled.span`
+  display: inline-flex;
+  gap: .25em;
+  align-items: center;
+`;
