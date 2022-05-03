@@ -5,10 +5,10 @@ chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
   if (!url) {
     return;
   }
-  if (!/https:\/\/www\.pixiv\.net/.test(url)) {
+  if (!/^https:\/\/www\.pixiv\.net/.test(url)) {
     return;
   }
-  if (status === 'complete') {
+  if (status !== 'complete') {
     return;
   }
 
