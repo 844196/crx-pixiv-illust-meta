@@ -20,14 +20,10 @@ export const manifest = defineManifest({
     48: 'assets/icon48.png',
     128: 'assets/icon128.png',
   },
-  permissions: [
-    'tabs',
-    'scripting',
-  ],
-  background: {
-    service_worker: 'src/sw.ts',
-  },
-  host_permissions: [
-    'https://www.pixiv.net/*',
+  content_scripts: [
+    {
+      matches: ['*://www.pixiv.net/*'],
+      js: ['src/main.tsx'],
+    },
   ],
 });
