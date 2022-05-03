@@ -2,7 +2,6 @@ import { SVGProps } from 'react';
 
 export function Heart(props: SVGProps<SVGSVGElement>) {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <svg viewBox="0 0 12 12" {...props}>
       <path
         fill="currentColor"
