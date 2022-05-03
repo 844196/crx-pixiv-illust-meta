@@ -1,17 +1,10 @@
-export type ContainerProps = JSX.IntrinsicElements['span'];
+import styled from '@emotion/styled';
 
-export function Container({ children, ...props }: ContainerProps) {
-  return (
-    <span
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        fontSize: '13px',
-        color: '#858585',
-      }}
-      {...props}
-    >
-      {children}
-    </span>
-  );
-}
+export const Container = styled.span`
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+  font-size: 13px;
+  font-weight: bold;
+  color: #858585;
+`;

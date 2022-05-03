@@ -15,8 +15,8 @@ function main() {
     a.setAttribute('data-has-illust-meta', 'processing');
 
     try {
-      const container = document.createElement('span');
-      a.appendChild(container);
+      const container = document.createElement('div');
+      a.parentElement?.after(container);
 
       render(<App illustId={parsedIllustId.data} />, container);
 
