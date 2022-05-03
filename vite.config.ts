@@ -6,7 +6,7 @@ import { manifest } from './manifest.config';
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({ jsxImportSource: '@emotion/react' }),
     crx({ manifest }),
   ],
   test: {
