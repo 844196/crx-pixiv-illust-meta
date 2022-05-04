@@ -1,18 +1,18 @@
 {
   "private": true,
-  "name": "chrome-pixiv-bookmark-rate-ext",
-  "displayName": "Pixiv Bookmark Rate Extension",
+  "name": "crx-pixiv-illust-meta",
+  "displayName": "Pixiv Illust meta",
   "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
   "version": "0.2.2",
   "license": "MIT",
   "author": "Masaya Takeda <844196@gmail.com>",
-  "homepage": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext",
+  "homepage": "https://github.com/844196/crx-pixiv-illust-meta",
   "repository": {
     "type": "git",
-    "url": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext"
+    "url": "https://github.com/844196/crx-pixiv-illust-meta.git"
   },
   "bugs": {
-    "url": "https://github.com/844196/chrome-pixiv-bookmark-rate-ext/issues"
+    "url": "https://github.com/844196/crx-pixiv-illust-meta/issues"
   },
   "engines": {
     "node": "16.x",
