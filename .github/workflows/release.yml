@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  archive_basename_prefix: chrome-pixiv-bookmark-rate-ext
+  archive_basename_prefix: crx-pixiv-illust-meta
 
 jobs:
   release:

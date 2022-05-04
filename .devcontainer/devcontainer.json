@@ -1,5 +1,5 @@
 {
-  "name": "chrome-pixiv-bookmark-rate-ext",
+  "name": "crx-pixiv-illust-meta",
   "features": {
     "common": true,
   },
@@ -8,7 +8,7 @@
   ],
   "service": "workspace",
   "remoteUser": "node",
-  "workspaceFolder": "/workspaces/chrome-pixiv-bookmark-rate-ext",
+  "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
   "postCreateCommand": "npm install",
   "extensions": [
     "dbaeumer.vscode-eslint",
