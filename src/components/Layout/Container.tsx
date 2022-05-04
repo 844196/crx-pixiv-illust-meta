@@ -1,10 +1,9 @@
-import styled from '@emotion/styled';
+import clsx from 'clsx';
 
-export const Container = styled.span`
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5em;
-  font-size: 13px;
-  font-weight: bold;
-  color: #858585;
-`;
+import { containerStyle } from './style.css';
+
+export function Container({ className, ...props }: JSX.IntrinsicElements['div']) {
+  return (
+    <div className={clsx(containerStyle, className)} {...props} />
+  );
+}
