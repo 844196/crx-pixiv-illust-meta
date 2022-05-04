@@ -3,7 +3,7 @@
   "name": "crx-pixiv-illust-meta",
   "displayName": "Pixiv Illust meta",
   "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Masaya Takeda <844196@gmail.com>",
   "homepage": "https://github.com/844196/crx-pixiv-illust-meta",
