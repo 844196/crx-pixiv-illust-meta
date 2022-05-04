@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "crx-pixiv-illust-meta",
-  "displayName": "Pixiv Illust meta",
+  "displayName": "Pixiv Illust Meta",
   "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
   "version": "1.0.0",
   "license": "MIT",
