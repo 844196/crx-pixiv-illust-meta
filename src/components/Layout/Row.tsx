@@ -1,7 +1,13 @@
-import styled from '@emotion/styled';
+import clsx from 'clsx';
 
-export const Row = styled.span`
-  display: inline-flex;
-  gap: .5em;
-  align-items: center;
-`;
+import { rowSkeletonStyle, rowStyle } from './style.css';
+
+export type RowProps = JSX.IntrinsicElements['div'] & {
+  loading?: boolean,
+};
+
+export function Row({ loading, className, ...props }: RowProps) {
+  return (
+    <div className={clsx(rowStyle, { [rowSkeletonStyle]: loading }, className)} {...props} />
+  );
+}

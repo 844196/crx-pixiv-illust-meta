@@ -1,7 +1,9 @@
-import styled from '@emotion/styled';
+import clsx from 'clsx';
 
-export const Column = styled.span`
-  display: inline-flex;
-  gap: .25em;
-  align-items: center;
-`;
+import { columnStyle } from './style.css';
+
+export function Column({ className, ...props }: JSX.IntrinsicElements['span']) {
+  return (
+    <span className={clsx(columnStyle, className)} {...props} />
+  );
+}
