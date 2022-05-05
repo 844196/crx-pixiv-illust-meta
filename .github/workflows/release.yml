@@ -1,25 +1,20 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - '*'
-
-env:
-  archive_basename_prefix: crx-pixiv-illust-meta
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Get version
-        id: get_version
-        uses: battila7/get-version-action@v2.3.0
-
-      - name: Compute archive basename
-        id: context
-        run: echo ::set-output name=archive_basename::${{ env.archive_basename_prefix }}-${{ steps.get_version.outputs.version }}
-
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -29,6 +24,22 @@ jobs:
           node-version: '16'
           cache: npm
 
+      - name: Setup git user
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Bump version
+        id: bump_version
+        run: |
+          npm version ${{ github.event.inputs.version }}
+          echo ::set-output name=new_version::$(jq -r .version package.json)
+
+      - name: Push
+        run: |
+          git push origin HEAD:${GITHUB_REF}
+          git push origin --tags
+
       - name: Build
         run: |
           npm ci
@@ -36,6 +47,10 @@ jobs:
 
       - name: Copy license file
         run: cp LICENSE.md dist
+
+      - name: Compute archive basename
+        id: context
+        run: echo ::set-output name=archive_basename::$(jq -r .name package.json)-${{ steps.bump_version.outputs.new_version }}
 
       - name: Rename directory for archive
         run: mv dist ${{ steps.context.outputs.archive_basename }}
@@ -57,8 +72,8 @@ jobs:
       - name: Create release draft
         uses: ncipollo/release-action@v1.10.0
         with:
-          name: ${{ steps.get_version.outputs.version }}
-          prerelease: ${{ steps.get_version.outputs.isPrerelease }}
+          name: ${{ steps.bump_version.outputs.new_version }}
+          tag: ${{ steps.bump_version.outputs.new_version }}
           draft: true
           artifacts: '${{ steps.context.outputs.archive_basename }}.*'
           token: ${{ secrets.GITHUB_TOKEN }}
