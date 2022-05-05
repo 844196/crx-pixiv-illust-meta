@@ -1,4 +1,4 @@
-import useSWR from 'swr';
+import useSWRImmutable from 'swr/immutable';
 
 import { IllustId } from '../../types/IllustId';
 import { IllustMeta } from '../../types/IllustMeta';
@@ -10,7 +10,7 @@ export type UseIllustMetaReturn = {
 };
 
 export function useIllustMeta(illustId: IllustId): UseIllustMetaReturn {
-  const { data } = useSWR<IllustMeta, Error>(illustId, fetcher, { suspense: true });
+  const { data } = useSWRImmutable<IllustMeta, Error>(illustId, fetcher, { suspense: true });
 
   return {
     // SEE: https://swr.bootcss.com/ja/docs/suspense
