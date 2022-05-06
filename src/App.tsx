@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
+import { IllustId } from '@external';
+
 import { ErrorFallback } from './components/ErrorFallback';
 import { IllustMeta, IllustMetaSkeleton } from './components/IllustMeta';
-import { IllustId } from './types/IllustId';
 
 export type AppProps = {
   illustId: IllustId;

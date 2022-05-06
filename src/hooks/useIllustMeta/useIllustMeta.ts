@@ -1,20 +1,26 @@
+import dayjs from 'dayjs';
 import useSWRImmutable from 'swr/immutable';
 
-import { IllustId } from '../../types/IllustId';
-import { IllustMeta } from '../../types/IllustMeta';
+import { AjaxIllustResponse, IllustId, fetchAjaxIllust } from '@external';
 
-import { fetcher } from './fetcher';
+import { IllustMeta } from '../../types/IllustMeta';
 
 export type UseIllustMetaReturn = {
   data: IllustMeta,
 };
 
 export function useIllustMeta(illustId: IllustId): UseIllustMetaReturn {
-  const { data } = useSWRImmutable<IllustMeta, Error>(illustId, fetcher, { suspense: true });
+  const { data } = useSWRImmutable<AjaxIllustResponse, Error>(illustId, fetchAjaxIllust, { suspense: true });
+
+  // SEE: https://swr.bootcss.com/ja/docs/suspense
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { body: { viewCount, bookmarkCount, createDate } } = data!;
 
   return {
-    // SEE: https://swr.bootcss.com/ja/docs/suspense
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    data: data!,
+    data: {
+      viewCount,
+      bookmarkCount,
+      postedAt: dayjs(createDate),
+    },
   };
 }

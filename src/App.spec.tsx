@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
+import { mockedIllustIds } from '@mock/db';
+
 import { App } from './App';
-import { mockedIllustIds } from './mocks/db';
 
 describe('<App />', () => {
   describe('存在しない/削除されたとき', () => {

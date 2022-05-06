@@ -17,6 +17,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
   rules: {
     'max-len': 'off',
     'no-console': [
@@ -50,7 +55,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        'src/mocks/*',
+        'mock/*',
         'manifest.config.ts',
         'vite.config.ts',
         'vitest.setup.*',
@@ -62,7 +67,7 @@ module.exports = {
     },
     {
       files: [
-        'src/mocks/handlers.ts',
+        'mock/*',
         '*.spec.ts*',
       ],
       rules: {

@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom';
 import 'whatwg-fetch';
 
-import { server } from './src/mocks/server';
+import { server } from '@mock/server';
+
 import './src/vendors/setup-dayjs';
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));

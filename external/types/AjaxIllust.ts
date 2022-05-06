@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-// アプリから参照するプロパティのみ定義
 export const AjaxIllustResponseSchema = z.object({
   error: z.literal(false),
   message: z.string(),

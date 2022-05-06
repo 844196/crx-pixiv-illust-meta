@@ -1,7 +1,8 @@
 import { render } from 'react-dom';
 
+import { IllustIdSchema } from '@external';
+
 import { App } from './App';
-import { IllustIdSchema } from './types/IllustId';
 import './vendors/setup-dayjs';
 
 export const DATA_NAME = 'data-illust-meta';
