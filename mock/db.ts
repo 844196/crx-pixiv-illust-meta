@@ -11,7 +11,8 @@ export const db = factory({
   },
 });
 
-export const mockedIllustIds = { /* eslint-disable @typescript-eslint/no-non-null-assertion */
+export const mockedIllustIds = {
+  /* eslint-disable @typescript-eslint/no-non-null-assertion */
   '存在しない・削除された': IllustIdSchema.parse('0')!,
   '閲覧数0・ブックマーク数0': IllustIdSchema.parse('123')!,
   '閲覧数1・ブックマーク数0': IllustIdSchema.parse('456')!,

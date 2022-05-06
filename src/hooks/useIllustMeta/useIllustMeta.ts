@@ -6,15 +6,20 @@ import { AjaxIllustResponse, IllustId, fetchAjaxIllust } from '@external';
 import { IllustMeta } from '../../types/IllustMeta';
 
 export type UseIllustMetaReturn = {
-  data: IllustMeta,
+  data: IllustMeta;
 };
 
 export function useIllustMeta(illustId: IllustId): UseIllustMetaReturn {
-  const { data } = useSWRImmutable<AjaxIllustResponse, Error>(illustId, fetchAjaxIllust, { suspense: true });
+  const { data } = useSWRImmutable<AjaxIllustResponse, Error>(
+    illustId,
+    fetchAjaxIllust,
+    { suspense: true }
+  );
 
   // SEE: https://swr.bootcss.com/ja/docs/suspense
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { body: { viewCount, bookmarkCount, createDate } } = data!;
+  const {
+    body: { viewCount, bookmarkCount, createDate },
+  } = data!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
   return {
     data: {

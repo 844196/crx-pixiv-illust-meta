@@ -6,9 +6,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
+  plugins: ['@typescript-eslint'],
   extends: [
     'airbnb',
     'airbnb-typescript',
@@ -33,7 +31,15 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+        ],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
@@ -66,10 +72,7 @@ module.exports = {
       },
     },
     {
-      files: [
-        'mock/*',
-        '*.spec.ts*',
-      ],
+      files: ['mock/*', '*.spec.ts*'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       },

@@ -8,7 +8,9 @@ describe('<BookmarkRate />', () => {
     const bookmarkCount = 0;
 
     it('何も表示されないこと', () => {
-      const { container } = render(<BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />);
+      const { container } = render(
+        <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
+      );
       expect(container).toBeEmptyDOMElement();
     });
   });
@@ -19,8 +21,13 @@ describe('<BookmarkRate />', () => {
     [2, 1, '50.00%'],
     [3, 1, '33.33%'],
     [3, 2, '66.67%'],
-  ])('閲覧数:%i, ブックマーク数:%i -> %s', (viewCount, bookmarkCount, expected) => {
-    render(<BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />);
-    expect(screen.getByText(expected)).toBeVisible();
-  });
+  ])(
+    '閲覧数:%i, ブックマーク数:%i -> %s',
+    (viewCount, bookmarkCount, expected) => {
+      render(
+        <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
+      );
+      expect(screen.getByText(expected)).toBeVisible();
+    }
+  );
 });

@@ -8,9 +8,7 @@ export function ErrorFallback({ error }: ErrorFallbackProps) {
   return (
     <Layout.Container role="alert">
       <Layout.Row>
-        <Layout.Column>
-          {error.message}
-        </Layout.Column>
+        <Layout.Column>{error.message}</Layout.Column>
       </Layout.Row>
     </Layout.Container>
   );

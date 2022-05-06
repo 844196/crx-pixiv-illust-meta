@@ -3,21 +3,14 @@
   "features": {
     "common": true
   },
-  "dockerComposeFile": [
-    "../docker-compose.yml"
-  ],
+  "dockerComposeFile": ["../docker-compose.yml"],
   "service": "workspace",
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
   "postCreateCommand": "npm ci",
-  "extensions": [
-  ],
   "customizations": {
     "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ],
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
       "settings": {
         "typescript.tsdk": "node_modules/typescript/lib",
         "editor.codeActionsOnSave": {
