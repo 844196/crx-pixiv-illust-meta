@@ -9,7 +9,7 @@
   "service": "workspace",
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm ci",
   "extensions": [
   ],
   "customizations": {
