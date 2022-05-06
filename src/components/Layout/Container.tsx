@@ -1,9 +1,10 @@
-import clsx from 'clsx';
+import { styled } from '@stitches/react';
 
-import { containerStyle } from './style.css';
-
-export function Container({ className, ...props }: JSX.IntrinsicElements['div']) {
-  return (
-    <div className={clsx(containerStyle, className)} {...props} />
-  );
-}
+export const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  lineHeight: '1.5em',
+  fontSize: '13px',
+  fontWeight: 'bold',
+  color: '#858585',
+});
