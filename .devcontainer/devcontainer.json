@@ -15,7 +15,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
       ],
       "settings": {
         "typescript.tsdk": "node_modules/typescript/lib",
