@@ -25,7 +25,10 @@
         "files.associations": {
           "**/.github/renovate.json5": "jsonc"
         },
-        "eslint.runtime": "/usr/local/bin/node"
+        "eslint.runtime": "/usr/local/bin/node",
+        "explorer.fileNesting.patterns": {
+          "package.json": "package-lock.json, .npmrc, .eslintrc.js, .eslintignore, tsconfig.json, vite.config.ts, vitest.*, manifest.config.ts"
+        }
       }
     }
   }
