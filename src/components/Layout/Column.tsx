@@ -1,9 +1,7 @@
-import clsx from 'clsx';
+import { styled } from '@stitches/react';
 
-import { columnStyle } from './style.css';
-
-export function Column({ className, ...props }: JSX.IntrinsicElements['span']) {
-  return (
-    <span className={clsx(columnStyle, className)} {...props} />
-  );
-}
+export const Column = styled('span', {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '0.25em',
+});

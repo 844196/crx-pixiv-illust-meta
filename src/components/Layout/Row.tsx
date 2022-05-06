@@ -1,13 +1,36 @@
-import clsx from 'clsx';
+import { keyframes, styled } from '@stitches/react';
 
-import { rowSkeletonStyle, rowStyle } from './style.css';
+const shimmer = keyframes({
+  '0%': {
+    transform: 'translate(-100%)',
+  },
+  '100%': {
+    transform: 'translate(100%)',
+  },
+});
 
-export type RowProps = JSX.IntrinsicElements['div'] & {
-  loading?: boolean,
-};
-
-export function Row({ loading, className, ...props }: RowProps) {
-  return (
-    <div className={clsx(rowStyle, { [rowSkeletonStyle]: loading }, className)} {...props} />
-  );
-}
+export const Row = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5em',
+  variants: {
+    loading: {
+      true: {
+        width: '100%',
+        backgroundColor: '#858585',
+        position: 'relative',
+        overflow: 'hidden',
+        height: '1em',
+        margin: '0.25em 0',
+        borderRadius: '999px',
+        '&::before': {
+          content: '',
+          height: '100%',
+          width: '100%',
+          background: 'linear-gradient(90deg, transparent, rgba(204, 204, 204, 0.5), transparent)',
+          animation: `${shimmer()} 1.2s linear infinite`,
+        },
+      },
+    },
+  },
+});
