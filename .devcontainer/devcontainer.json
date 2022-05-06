@@ -1,26 +1,35 @@
 {
   "name": "crx-pixiv-illust-meta",
   "features": {
-    "common": true,
+    "common": true
   },
   "dockerComposeFile": [
-    "../docker-compose.yml",
+    "../docker-compose.yml"
   ],
   "service": "workspace",
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm ci",
   "extensions": [
-    "dbaeumer.vscode-eslint",
   ],
-  "settings": {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-    },
-    "files.associations": {
-      "**/.github/renovate.json5": "jsonc",
-    },
-    "eslint.runtime": "/usr/local/bin/node",
-  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "files.associations": {
+          "**/.github/renovate.json5": "jsonc"
+        },
+        "eslint.runtime": "/usr/local/bin/node",
+        "explorer.fileNesting.patterns": {
+          "package.json": "package-lock.json, .npmrc, .eslintrc.js, .eslintignore, tsconfig.json, vite.config.ts, vitest.*, manifest.config.ts"
+        }
+      }
+    }
+  }
 }
