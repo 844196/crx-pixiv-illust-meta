@@ -23,12 +23,14 @@
         "editor.codeActionsOnSave": {
           "source.fixAll.eslint": true
         },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
         "files.associations": {
           "**/.github/renovate.json5": "jsonc"
         },
         "eslint.runtime": "/usr/local/bin/node",
         "explorer.fileNesting.patterns": {
-          "package.json": "package-lock.json, .npmrc, .eslintrc.js, .eslintignore, tsconfig.json, vite.config.ts, vitest.*, manifest.config.ts"
+          "package.json": "package-lock.json, .npmrc, .eslintrc.js, .eslintignore, .prettierrc.js, .prettierignore, tsconfig.json, vite.config.ts, vitest.*, manifest.config.ts"
         }
       }
     }

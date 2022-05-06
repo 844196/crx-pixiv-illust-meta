@@ -11,11 +11,12 @@ module.exports = {
   ],
   extends: [
     'airbnb',
-    'airbnb/hooks',
     'airbnb-typescript',
+    'airbnb/hooks',
     'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
   ],
   settings: {
     'import/resolver': {
@@ -23,7 +24,6 @@ module.exports = {
     },
   },
   rules: {
-    'max-len': 'off',
     'no-console': [
       'error',
       {

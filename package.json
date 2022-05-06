@@ -22,6 +22,7 @@
     "lint": "run-s --continue-on-error lint:*",
     "lint:tsc": "tsc --noEmit",
     "lint:eslint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:prettier": "prettier --check .",
     "test": "vitest",
     "build": "vite build"
   },
