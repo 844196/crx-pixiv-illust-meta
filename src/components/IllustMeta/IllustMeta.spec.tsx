@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import dayjs from 'dayjs';
 
+import { IllustIdSchema } from '@external';
+
 import * as hook from '../../hooks/useIllustMeta';
-import { IllustIdSchema } from '../../types/IllustId';
 
 import { IllustMeta } from './IllustMeta';
 

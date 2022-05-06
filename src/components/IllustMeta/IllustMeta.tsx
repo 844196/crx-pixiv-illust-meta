@@ -1,5 +1,6 @@
+import { IllustId } from '@external';
+
 import { useIllustMeta } from '../../hooks/useIllustMeta';
-import { IllustId } from '../../types/IllustId';
 import { BookmarkRate } from '../BookmarkRate';
 import * as Icon from '../Icon';
 import * as Layout from '../Layout';

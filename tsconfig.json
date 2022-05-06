@@ -4,9 +4,16 @@
     "skipLibCheck": true,
     "types": ["vitest/globals"],
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@external": ["external/"],
+      "@mock/*": ["mock/*"],
+    },
   },
   "include": [
     "src/**/*",
+    "external/**/*",
+    "mock/**/*",
     ".eslintrc.js",
     "manifest.config.ts",
     "vite.config.ts",
