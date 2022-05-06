@@ -8,10 +8,5 @@ export function BookmarkRate({ viewCount, bookmarkCount }: BookmarkRateProps) {
     return null;
   }
 
-  return (
-    <>
-      {((bookmarkCount / viewCount) * 100).toFixed(2)}
-      %
-    </>
-  );
+  return <>{((bookmarkCount / viewCount) * 100).toFixed(2)}%</>;
 }

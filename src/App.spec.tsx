@@ -10,7 +10,7 @@ describe('<App />', () => {
 
     beforeAll(() => {
       // ドキッとするので何もしない実装に差し替える
-      spy.mockImplementation(() => { /** NOOP */ });
+      spy.mockImplementation(() => {});
     });
 
     afterAll(() => {
@@ -25,7 +25,9 @@ describe('<App />', () => {
 
       const alert = await screen.findByRole('alert');
       expect(alert).toBeInTheDocument();
-      expect(alert).toHaveTextContent('該当作品は削除されたか、存在しない作品IDです。');
+      expect(alert).toHaveTextContent(
+        '該当作品は削除されたか、存在しない作品IDです。'
+      );
       expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
     });
   });

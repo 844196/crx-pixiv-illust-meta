@@ -3,9 +3,5 @@ type NumberProps = Omit<JSX.IntrinsicElements['span'], 'children'> & {
 };
 
 export function Number({ children, ...props }: NumberProps) {
-  return (
-    <span {...props}>
-      {children.toLocaleString()}
-    </span>
-  );
+  return <span {...props}>{children.toLocaleString()}</span>;
 }

@@ -8,11 +8,13 @@ import { Number } from '../Number';
 import { Time } from '../Time';
 
 export type IllustMetaProps = {
-  illustId: IllustId
+  illustId: IllustId;
 };
 
 export function IllustMeta({ illustId }: IllustMetaProps) {
-  const { data: { viewCount, bookmarkCount, postedAt } } = useIllustMeta(illustId);
+  const {
+    data: { viewCount, bookmarkCount, postedAt },
+  } = useIllustMeta(illustId);
 
   return (
     <Layout.Container role="contentinfo">
@@ -35,13 +37,19 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
           <Icon.Eye width="12" height="10" />
           <Number data-testid="viewCount">{viewCount}</Number>
         </Layout.Column>
-        <Layout.Column as="a" href={`https://www.pixiv.net/bookmark_detail.php?illust_id=${illustId}`}>
+        <Layout.Column
+          as="a"
+          href={`https://www.pixiv.net/bookmark_detail.php?illust_id=${illustId}`}
+        >
           <Icon.Heart width="10" height="10" />
           <Number data-testid="bookmarkCount">{bookmarkCount}</Number>
-          {(viewCount > 0 && bookmarkCount > 0) && (
+          {viewCount > 0 && bookmarkCount > 0 && (
             <span data-testid="bookmarkRate">
               (
-              <BookmarkRate viewCount={viewCount} bookmarkCount={bookmarkCount} />
+              <BookmarkRate
+                viewCount={viewCount}
+                bookmarkCount={bookmarkCount}
+              />
               )
             </span>
           )}

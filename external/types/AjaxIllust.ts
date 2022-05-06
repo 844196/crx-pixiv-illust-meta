@@ -20,4 +20,6 @@ export const AjaxIllustErrorResponseSchema = z.object({
   message: z.string().nonempty(),
 });
 
-export type AjaxIllustErrorResponse = z.infer<typeof AjaxIllustErrorResponseSchema>;
+export type AjaxIllustErrorResponse = z.infer<
+  typeof AjaxIllustErrorResponseSchema
+>;

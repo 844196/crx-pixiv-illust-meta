@@ -27,7 +27,8 @@ export const Row = styled('div', {
           content: '',
           height: '100%',
           width: '100%',
-          background: 'linear-gradient(90deg, transparent, rgba(204, 204, 204, 0.5), transparent)',
+          background:
+            'linear-gradient(90deg, transparent, rgba(204, 204, 204, 0.5), transparent)',
           animation: `${shimmer()} 1.2s linear infinite`,
         },
       },

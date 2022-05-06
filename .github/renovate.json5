@@ -1,11 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "commitMessagePrefix": "⬆️ ",
-  "extends": [
-    "config:base",
-    "group:allNonMajor",
-    "docker:disableMajor"
-  ],
+  "extends": ["config:base", "group:allNonMajor", "docker:disableMajor"],
   "packageRules": [
     {
       "groupName": "linters",
@@ -18,10 +14,7 @@
     {
       "groupName": "react",
       "extends": ["monorepo:react"],
-      "matchPackageNames": [
-        "@types/react",
-        "@types/react-dom"
-      ]
+      "matchPackageNames": ["@types/react", "@types/react-dom"]
     }
   ]
 }

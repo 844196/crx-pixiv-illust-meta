@@ -28,10 +28,15 @@ export function mount(a: HTMLAnchorElement) {
 
 function main() {
   document
-    .querySelectorAll<HTMLAnchorElement>(`div[type="illust"] ~ div > a[href*="/artworks/"]:not([${DATA_NAME}])`)
+    .querySelectorAll<HTMLAnchorElement>(
+      `div[type="illust"] ~ div > a[href*="/artworks/"]:not([${DATA_NAME}])`
+    )
     .forEach(mount);
 }
 
 main();
 
-new MutationObserver(main).observe(document.body, { childList: true, subtree: true });
+new MutationObserver(main).observe(document.body, {
+  childList: true,
+  subtree: true,
+});

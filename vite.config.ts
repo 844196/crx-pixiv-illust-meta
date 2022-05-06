@@ -7,10 +7,7 @@ import { defineConfig } from 'vite';
 import { manifest } from './manifest.config';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    crx({ manifest }),
-  ],
+  plugins: [react(), crx({ manifest })],
   resolve: {
     alias: {
       '@external': path.join(__dirname, './external/'),
