@@ -1,3 +1,5 @@
+import { act } from '@testing-library/react';
+
 import { DATA_NAME, mount } from './main';
 
 describe('mount()', () => {
@@ -11,7 +13,7 @@ describe('mount()', () => {
     a.href = '/artworks/123';
 
     it('マウントに成功すること', () => {
-      mount(a);
+      act(() => mount(a));
       expect(a).toHaveAttribute(DATA_NAME, 'processed');
     });
   });
