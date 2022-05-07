@@ -1,4 +1,4 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { IllustIdSchema } from '@external';
 
@@ -17,7 +17,7 @@ export function mount(a: HTMLAnchorElement) {
     // main() のクエリによって親が存在することは保証されている
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     a.parentElement!.after(container);
-    render(<App illustId={illustId} />, container);
+    createRoot(container).render(<App illustId={illustId} />);
 
     a.setAttribute(DATA_NAME, 'processed');
   } catch (err) {
