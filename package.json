@@ -19,6 +19,7 @@
     "yarn": "please_use_npm_instead"
   },
   "scripts": {
+    "start": "vite",
     "lint": "run-s --continue-on-error lint:*",
     "lint:tsc": "tsc --noEmit",
     "lint:eslint": "eslint . --ext .js,.ts,.jsx,.tsx",
