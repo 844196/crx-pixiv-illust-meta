@@ -1,10 +1,10 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../style';
 
 export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  lineHeight: '1.5em',
-  fontSize: '13px',
-  fontWeight: 'bold',
-  color: '#858585',
+  lineHeight: '$default',
+  fontSize: '$default',
+  fontWeight: '$default',
+  color: '$default',
 });
