@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../style';
 
 export const Column = styled('span', {
   display: 'inline-flex',
