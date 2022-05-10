@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { IllustIdSchema } from '@external';
 
 import { App } from './App';
+import './dayjs.setup';
 import { css, theme } from './style';
-import './vendors/setup-dayjs';
 
 export const DATA_NAME = 'data-illust-meta';
 
