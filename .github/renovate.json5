@@ -1,8 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "commitMessagePrefix": "⬆️ ",
-  "extends": ["config:base", "group:allNonMajor", "docker:disableMajor"],
+  "extends": ["config:base", "docker:disableMajor"],
   "packageRules": [
+    {
+      "groupName": "react",
+      "extends": ["monorepo:react"],
+      "matchPackageNames": ["@types/react", "@types/react-dom"]
+    },
     {
       "groupName": "linters",
       "extends": ["packages:linters"],
@@ -12,9 +17,19 @@
       }
     },
     {
-      "groupName": "react",
-      "extends": ["monorepo:react"],
-      "matchPackageNames": ["@types/react", "@types/react-dom"]
+      "groupName": "test",
+      "matchPackageNames": [
+        "vitest",
+        "jsdom",
+        "msw",
+        "@mswjs/data",
+        "whatwg-fetch"
+      ],
+      "matchPackagePrefixes": ["@testing-library"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
     }
   ]
 }
