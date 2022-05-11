@@ -21,5 +21,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
-      - run: npm run test
+      - run: npm run test -- --reporter=junit --outputFile=test-results.xml
+      - name: Test Summary
+        uses: test-summary/action@v1
+        with:
+          paths: 'test-results.xml'
+        if: always()
       - run: npm run build
