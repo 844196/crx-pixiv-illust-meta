@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
 import useSWRImmutable from 'swr/immutable';
 
-import { AjaxIllustResponse, IllustId, fetchAjaxIllust } from '@external';
-
+import { AjaxIllustResponse, IllustId, fetchAjaxIllust } from '../../api';
 import { IllustMeta } from '../../types/IllustMeta';
 
 export type UseIllustMetaReturn = {

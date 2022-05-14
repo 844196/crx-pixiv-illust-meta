@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { IllustId } from '@external';
-
+import { IllustId } from './api';
 import { ErrorFallback } from './components/ErrorFallback';
 import { IllustMeta, IllustMetaSkeleton } from './components/IllustMeta';
 

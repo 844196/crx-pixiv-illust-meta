@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client';
 
-import { IllustIdSchema } from '@external';
-
+import { IllustIdSchema } from './api';
 import { App } from './App';
 import './dayjs.setup';
 import { css, theme } from './style';

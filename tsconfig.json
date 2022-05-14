@@ -6,14 +6,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@external": ["external/"],
-      "@mock/*": ["mock/*"]
+      "@mock/*": ["src/mock/*"]
     }
   },
   "include": [
     "src/**/*",
-    "external/**/*",
-    "mock/**/*",
     ".eslintrc.js",
     ".prettierrc.js",
     "manifest.config.ts",
