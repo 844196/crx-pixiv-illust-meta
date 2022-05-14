@@ -4,7 +4,7 @@ export const { styled, theme, css, keyframes } = createStitches({
   prefix: 'crx-illust-meta',
   theme: {
     fontSizes: {
-      default: '13px',
+      default: '12px',
     },
     lineHeights: {
       default: 1.5,
