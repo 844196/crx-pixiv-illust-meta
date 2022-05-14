@@ -10,8 +10,7 @@ export default defineConfig({
   plugins: [react(), crx({ manifest })],
   resolve: {
     alias: {
-      '@external': path.join(__dirname, './external/'),
-      '@mock/': path.join(__dirname, './mock/'),
+      '@mock/': path.join(__dirname, './src/mock/'),
     },
   },
   test: {
@@ -19,5 +18,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     globalSetup: './vitest.setup.global.ts',
+    coverage: {
+      reporter: 'cobertura',
+    },
   },
 });

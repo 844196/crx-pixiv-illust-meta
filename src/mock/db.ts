@@ -1,6 +1,6 @@
 import { factory, primaryKey } from '@mswjs/data';
 
-import { IllustIdSchema } from '@external';
+import { IllustIdSchema } from '../api';
 
 export const db = factory({
   illust: {

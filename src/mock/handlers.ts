@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-import { AjaxIllustErrorResponse, AjaxIllustResponse } from '@external';
+import { AjaxIllustErrorResponse, AjaxIllustResponse } from '../api';
 
 import { db } from './db';
 

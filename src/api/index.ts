@@ -5,9 +5,5 @@ export type {
   AjaxIllustResponse,
   AjaxIllustErrorResponse,
 } from './types/AjaxIllust';
-export {
-  AjaxIllustResponseSchema,
-  AjaxIllustErrorResponseSchema,
-} from './types/AjaxIllust';
 
-export { fetchAjaxIllust } from './api/fetchAjaxIllust';
+export { fetchAjaxIllust } from './fetchAjaxIllust';
