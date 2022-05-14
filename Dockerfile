@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3-labs
 
-FROM node:16-bullseye
+FROM node:16.15.0-bullseye
 
 RUN <<SHELL
   install -o node -g node -d /workspaces/crx-pixiv-illust-meta/
