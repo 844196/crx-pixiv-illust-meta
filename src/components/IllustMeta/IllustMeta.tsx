@@ -33,14 +33,14 @@ export function IllustMeta({ illustId }: IllustMetaProps) {
       </Layout.Row>
       <Layout.Row>
         <Layout.Column>
-          <Icon.Eye width="12" height="10" />
+          <Icon.Eye />
           <Number data-testid="viewCount">{viewCount}</Number>
         </Layout.Column>
         <Layout.Column
           as="a"
           href={`https://www.pixiv.net/bookmark_detail.php?illust_id=${illustId}`}
         >
-          <Icon.Heart width="10" height="10" />
+          <Icon.Heart />
           <Number data-testid="bookmarkCount">{bookmarkCount}</Number>
           {viewCount > 0 && bookmarkCount > 0 && (
             <span data-testid="bookmarkRate">

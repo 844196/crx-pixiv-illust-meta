@@ -12,7 +12,7 @@ const shimmer = keyframes({
 export const Row = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  gap: '0.5em',
+  gap: '1em',
   variants: {
     loading: {
       true: {
