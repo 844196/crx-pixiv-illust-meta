@@ -2,7 +2,6 @@ services:
   workspace:
     build:
       context: .
-      dockerfile: Dockerfile
     volumes:
       - .:/workspaces/crx-pixiv-illust-meta:cached
       - node_modules:/workspaces/crx-pixiv-illust-meta/node_modules
