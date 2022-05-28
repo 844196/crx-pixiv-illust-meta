@@ -40,7 +40,7 @@
     "@crxjs/vite-plugin": "1.0.6",
     "@mswjs/data": "0.10.1",
     "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/react": "13.2.0",
+    "@testing-library/react": "13.3.0",
     "@tsconfig/vite-react": "1.0.0",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
