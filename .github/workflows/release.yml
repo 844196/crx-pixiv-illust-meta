@@ -56,14 +56,14 @@ jobs:
         run: mv dist ${{ steps.context.outputs.archive_basename }}
 
       - name: Make tarball
-        uses: TheDoctor0/zip-release@0.6.3
+        uses: TheDoctor0/zip-release@0.6.2
         with:
           path: ${{ steps.context.outputs.archive_basename }}
           type: tar
           filename: ${{ steps.context.outputs.archive_basename }}.tar.gz
 
       - name: Make zipball
-        uses: TheDoctor0/zip-release@0.6.3
+        uses: TheDoctor0/zip-release@0.6.2
         with:
           path: ${{ steps.context.outputs.archive_basename }}
           type: zip
