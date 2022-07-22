@@ -1,11 +1,8 @@
 import { rest } from 'msw';
 
-import { db, mockedIllustIds } from '@mock/db';
-import { server } from '@mock/server';
-
 import { fetchAjaxIllust } from './fetchAjaxIllust';
-import { AjaxIllustResponse } from './types/AjaxIllust';
-import { IllustIdSchema } from './types/IllustId';
+import { db, mockedIllustIds, server } from './mock';
+import { AjaxIllustResponse, IllustIdSchema } from './types';
 
 describe('fetchAjaxIllust', () => {
   describe('エラー時', () => {

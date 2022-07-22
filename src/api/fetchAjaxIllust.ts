@@ -2,8 +2,8 @@ import {
   AjaxIllustErrorResponseSchema,
   AjaxIllustResponse,
   AjaxIllustResponseSchema,
-} from './types/AjaxIllust';
-import { IllustId } from './types/IllustId';
+  IllustId,
+} from './types';
 
 /**
  * @throws {Error}

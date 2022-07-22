@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { mockedIllustIds } from '@mock/db';
-
+import { mockedIllustIds } from './api/mock';
 import { App } from './App';
 
 describe('<App />', () => {
