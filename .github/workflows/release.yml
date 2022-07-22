@@ -18,10 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Read node version from Dockerfile
+        run: echo ::set-output name=node_version::$(grep -P -o '(?<=node:)[0-9]+\.[0-9]+\.[0-9]+' Dockerfile)
+        id: node_version
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.15.0'
+          node-version: ${{ steps.node_version.outputs.node_version }}
           cache: npm
 
       - name: Setup git user
