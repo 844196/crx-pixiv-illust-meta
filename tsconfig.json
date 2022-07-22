@@ -9,11 +9,7 @@
     "baseUrl": "."
   },
   "include": [
-    "src/**/*",
-    ".eslintrc.js",
-    ".prettierrc.js",
-    "manifest.config.ts",
-    "vite.config.ts",
-    "vitest.setup.*"
+    "src",
+    "vitest.setup.ts" // see https://github.com/testing-library/jest-dom#with-typescript
   ]
 }
