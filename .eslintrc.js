@@ -1,10 +1,14 @@
-/** @type {import('eslint').Linter.Config} */
-module.exports = {
+// @ts-check
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { defineConfig } = require('eslint-define-config');
+
+module.exports = defineConfig({
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.eslint.json'],
   },
   plugins: ['@typescript-eslint', 'testing-library'],
   extends: [
@@ -19,7 +23,10 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['./tsconfig.json'],
+      },
     },
   },
   rules: {
@@ -62,7 +69,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        'src/mock/*',
+        'src/api/mock/*',
         'manifest.config.ts',
         'vite.config.ts',
         'vitest.setup.*',
@@ -73,10 +80,10 @@ module.exports = {
       },
     },
     {
-      files: ['src/mock/*', '*.spec.ts*'],
+      files: ['src/api/mock/*', '*.spec.ts*'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       },
     },
   ],
-};
+});

@@ -2,19 +2,14 @@
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "skipLibCheck": true,
-    "types": ["vitest/globals"],
+    "types": [
+      "vitest/globals" // see https://vitest.dev/config/#globals
+    ],
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@mock/*": ["src/mock/*"]
-    }
+    "baseUrl": "."
   },
   "include": [
-    "src/**/*",
-    ".eslintrc.js",
-    ".prettierrc.js",
-    "manifest.config.ts",
-    "vite.config.ts",
-    "vitest.setup.*"
+    "src",
+    "vitest.setup.ts" // see https://github.com/testing-library/jest-dom#with-typescript
   ]
 }
