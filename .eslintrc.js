@@ -62,7 +62,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        'src/mock/*',
+        'src/api/mock/*',
         'manifest.config.ts',
         'vite.config.ts',
         'vitest.setup.*',
@@ -73,7 +73,7 @@ module.exports = {
       },
     },
     {
-      files: ['src/mock/*', '*.spec.ts*'],
+      files: ['src/api/mock/*', '*.spec.ts*'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       },

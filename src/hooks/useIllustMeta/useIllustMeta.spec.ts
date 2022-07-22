@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import dayjs from 'dayjs';
 
-import { db, mockedIllustIds } from '@mock/db';
+import { db, mockedIllustIds } from '../../api/mock';
 
 import { UseIllustMetaReturn, useIllustMeta } from './useIllustMeta';
 
