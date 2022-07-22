@@ -8,10 +8,7 @@
   },
   "include": [
     "src/**/*",
-    ".eslintrc.js",
-    ".prettierrc.js",
-    "manifest.config.ts",
-    "vite.config.ts",
-    "vitest.setup.*"
-  ]
+    "vitest.setup.*" // see: https://github.com/testing-library/jest-dom#with-typescript
+  ],
+  "exclude": ["node_modules", "dist"]
 }
