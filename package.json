@@ -1,29 +1,26 @@
 {
-  "private": true,
   "name": "crx-pixiv-illust-meta",
   "displayName": "Pixiv Illust Meta",
-  "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
   "version": "2.1.4",
-  "license": "MIT",
-  "author": "Masaya Takeda <844196@gmail.com>",
+  "private": true,
+  "description": "作品一覧画面のサムネイル下部に閲覧数・ブックマーク数・ブックマーク率を追加表示します",
   "homepage": "https://github.com/844196/crx-pixiv-illust-meta",
+  "bugs": {
+    "url": "https://github.com/844196/crx-pixiv-illust-meta/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/844196/crx-pixiv-illust-meta.git"
   },
-  "bugs": {
-    "url": "https://github.com/844196/crx-pixiv-illust-meta/issues"
-  },
-  "engines": {
-    "node": "16.x",
-    "yarn": "please_use_npm_instead"
-  },
+  "license": "MIT",
+  "author": "Masaya Takeda <844196@gmail.com>",
   "scripts": {
+    "preinstall": "npx -y only-allow npm",
     "start": "vite",
     "lint": "run-s --continue-on-error lint:*",
-    "lint:tsc": "tsc --noEmit",
-    "lint:eslint": "eslint . --ext .js,.ts,.jsx,.tsx",
-    "lint:prettier": "prettier --check .",
+    "lint:type": "tsc --noEmit",
+    "lint:style": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:format": "prettier --check .",
     "test": "vitest",
     "build": "vite build"
   },
@@ -66,5 +63,8 @@
     "vite": "2.9.14",
     "vitest": "0.18.1",
     "whatwg-fetch": "3.6.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
