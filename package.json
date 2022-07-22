@@ -18,9 +18,9 @@
     "preinstall": "npx -y only-allow npm",
     "start": "vite",
     "lint": "run-s --continue-on-error lint:*",
-    "lint:tsc": "tsc --noEmit",
-    "lint:eslint": "eslint . --ext .js,.ts,.jsx,.tsx",
-    "lint:prettier": "prettier --check .",
+    "lint:type": "tsc --noEmit",
+    "lint:style": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:format": "prettier --check .",
     "test": "vitest",
     "build": "vite build"
   },
