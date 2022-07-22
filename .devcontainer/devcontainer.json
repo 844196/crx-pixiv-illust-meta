@@ -7,7 +7,6 @@
   "service": "workspace",
   "remoteUser": "node",
   "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
-  "postCreateCommand": "npm ci",
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
@@ -18,10 +17,7 @@
         },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
-        "eslint.runtime": "/usr/local/bin/node",
-        "explorer.fileNesting.patterns": {
-          "package.json": "package-lock.json, .npmrc, .eslintrc.js, .eslintignore, .prettierrc.js, .prettierignore, tsconfig.json, vite.config.ts, vitest.*, manifest.config.ts"
-        }
+        "eslint.runtime": "/usr/local/bin/node"
       }
     }
   }
