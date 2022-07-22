@@ -1,5 +1,9 @@
-/** @type {import('eslint').Linter.Config} */
-module.exports = {
+// @ts-check
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { defineConfig } = require('eslint-define-config');
+
+module.exports = defineConfig({
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,7 +23,10 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['./tsconfig.json'],
+      },
     },
   },
   rules: {
@@ -79,4 +86,4 @@ module.exports = {
       },
     },
   ],
-};
+});
