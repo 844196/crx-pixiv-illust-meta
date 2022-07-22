@@ -15,6 +15,7 @@
   "license": "MIT",
   "author": "Masaya Takeda <844196@gmail.com>",
   "scripts": {
+    "preinstall": "npx -y only-allow npm",
     "start": "vite",
     "lint": "run-s --continue-on-error lint:*",
     "lint:tsc": "tsc --noEmit",
@@ -64,7 +65,6 @@
     "whatwg-fetch": "3.6.2"
   },
   "engines": {
-    "node": "16.x",
-    "yarn": "please_use_npm_instead"
+    "node": "16.x"
   }
 }
