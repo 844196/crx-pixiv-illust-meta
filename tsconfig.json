@@ -4,10 +4,7 @@
     "skipLibCheck": true,
     "types": ["vitest/globals"],
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@mock/*": ["src/mock/*"]
-    }
+    "baseUrl": "."
   },
   "include": [
     "src/**/*",

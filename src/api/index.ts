@@ -1,9 +1,3 @@
-export type { IllustId } from './types/IllustId';
-export { IllustIdSchema } from './types/IllustId';
-
-export type {
-  AjaxIllustResponse,
-  AjaxIllustErrorResponse,
-} from './types/AjaxIllust';
+export * from './types';
 
 export { fetchAjaxIllust } from './fetchAjaxIllust';
