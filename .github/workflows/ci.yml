@@ -42,7 +42,7 @@ jobs:
         if: always()
 
       - name: Generate coverage summary
-        uses: irongut/CodeCoverageSummary@v1.2.0
+        uses: irongut/CodeCoverageSummary@v1.3.0
         with:
           filename: coverage/cobertura-coverage.xml
           output: file
