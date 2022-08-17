@@ -1,12 +1,10 @@
 {
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
-    "skipLibCheck": true,
     "types": [
       "vitest/globals" // see https://vitest.dev/config/#globals
     ],
-    "jsx": "react-jsx",
-    "baseUrl": "."
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
