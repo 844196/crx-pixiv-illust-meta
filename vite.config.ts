@@ -14,8 +14,12 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     globalSetup: './vitest.setup.global.ts',
+    reporters: ['default', 'junit'],
+    outputFile: {
+      junit: 'tests/results/results.xml',
+    },
     coverage: {
-      reporter: 'cobertura',
+      reporter: ['text', 'json-summary', 'json'],
     },
   },
 });
