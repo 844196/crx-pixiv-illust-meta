@@ -1,4 +1,5 @@
 /coverage
+/tests/results/
 /dist/
 /node_modules/
 

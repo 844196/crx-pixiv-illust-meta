@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+    <testsuite name="src/components/BookmarkRate/BookmarkRate.spec.tsx" timestamp="2022-09-08T09:50:55.386Z" hostname="1f65aac61fa1" tests="6" failures="0" errors="0" skipped="0" time="0.141">
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数が0のとき &gt; 何も表示されないこと" time="0.034">
+        </testcase>
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数:1, ブックマーク数:0 -&gt; 0.00%" time="0.052">
+        </testcase>
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数:1, ブックマーク数:1 -&gt; 100.00%" time="0.012">
+        </testcase>
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数:2, ブックマーク数:1 -&gt; 50.00%" time="0.008">
+        </testcase>
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数:3, ブックマーク数:1 -&gt; 33.33%" time="0.021">
+        </testcase>
+        <testcase classname="src/components/BookmarkRate/BookmarkRate.spec.tsx" name="&lt;BookmarkRate /&gt; &gt; 閲覧数:3, ブックマーク数:2 -&gt; 66.67%" time="0.009">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/Number/Number.spec.tsx" timestamp="2022-09-08T09:50:55.398Z" hostname="1f65aac61fa1" tests="8" failures="0" errors="0" skipped="0" time="0.224">
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 0 -&gt; 0" time="0.112">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 1 -&gt; 1" time="0.011">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 12 -&gt; 12" time="0.033">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 123 -&gt; 123" time="0.027">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 1234 -&gt; 1,234" time="0.011">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 12345 -&gt; 12,345" time="0.009">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 123456 -&gt; 123,456" time="0.01">
+        </testcase>
+        <testcase classname="src/components/Number/Number.spec.tsx" name="&lt;Number /&gt; &gt; 1234567 -&gt; 1,234,567" time="0.007">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/App.spec.tsx" timestamp="2022-09-08T09:50:55.412Z" hostname="1f65aac61fa1" tests="2" failures="0" errors="0" skipped="0" time="0.415">
+        <testcase classname="src/App.spec.tsx" name="&lt;App /&gt; &gt; 存在しない/削除されたとき &gt; エラーが表示されること" time="0.339">
+        </testcase>
+        <testcase classname="src/App.spec.tsx" name="&lt;App /&gt; &gt; 存在するイラスト" time="0.068">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/IllustMeta/IllustMeta.spec.tsx" timestamp="2022-09-08T09:50:55.413Z" hostname="1f65aac61fa1" tests="3" failures="0" errors="0" skipped="0" time="0.136">
+        <testcase classname="src/components/IllustMeta/IllustMeta.spec.tsx" name="&lt;IllustMeta /&gt; &gt; 閲覧数・ブックマーク数ともに1以上のとき &gt; ブックマーク率も表示されること" time="0.099">
+        </testcase>
+        <testcase classname="src/components/IllustMeta/IllustMeta.spec.tsx" name="&lt;IllustMeta /&gt; &gt; 閲覧数1以上・ブックマーク数0のとき &gt; ブックマーク率は表示されないこと" time="0.015">
+        </testcase>
+        <testcase classname="src/components/IllustMeta/IllustMeta.spec.tsx" name="&lt;IllustMeta /&gt; &gt; 閲覧数・ブックマーク数ともに0のとき &gt; ブックマーク率は表示されないこと" time="0.018">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/Time/Time.spec.tsx" timestamp="2022-09-08T09:50:55.415Z" hostname="1f65aac61fa1" tests="1" failures="0" errors="0" skipped="0" time="0.102">
+        <testcase classname="src/components/Time/Time.spec.tsx" name="&lt;Time /&gt; &gt; all" time="0.097">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/hooks/useIllustMeta/useIllustMeta.spec.ts" timestamp="2022-09-08T09:50:55.416Z" hostname="1f65aac61fa1" tests="1" failures="0" errors="0" skipped="0" time="0.135">
+        <testcase classname="src/hooks/useIllustMeta/useIllustMeta.spec.ts" name="useIllustMeta &gt; given illust id data does exist &gt; return converted object" time="0.13">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/api/fetchAjaxIllust.spec.ts" timestamp="2022-09-08T09:50:55.417Z" hostname="1f65aac61fa1" tests="3" failures="0" errors="0" skipped="0" time="0.09">
+        <testcase classname="src/api/fetchAjaxIllust.spec.ts" name="fetchAjaxIllust &gt; エラー時 &gt; エラー文言が含まれる場合は、それを文言としたErrorが送出されること" time="0.066">
+        </testcase>
+        <testcase classname="src/api/fetchAjaxIllust.spec.ts" name="fetchAjaxIllust &gt; エラー時 &gt; 未知のエラーの場合は、フォールバックエラー文言のErrorが送出されること" time="0.01">
+        </testcase>
+        <testcase classname="src/api/fetchAjaxIllust.spec.ts" name="fetchAjaxIllust &gt; 存在する &gt; レスポンスオブジェクトが返ること" time="0.009">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/main.spec.tsx" timestamp="2022-09-08T09:50:55.419Z" hostname="1f65aac61fa1" tests="2" failures="0" errors="0" skipped="0" time="0.129">
+        <testcase classname="src/main.spec.tsx" name="mount() &gt; 正しいa要素を渡された時 &gt; マウントに成功すること" time="0.118">
+        </testcase>
+        <testcase classname="src/main.spec.tsx" name="mount() &gt; 不正なa要素を渡された時 &gt; マウントに失敗し、エラーを送出すること" time="0.004">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/api/types/IllustId.spec.ts" timestamp="2022-09-08T09:50:55.421Z" hostname="1f65aac61fa1" tests="3" failures="0" errors="0" skipped="0" time="0.018">
+        <testcase classname="src/api/types/IllustId.spec.ts" name="IllustIdSchema &gt; 文字列型でなければならない" time="0.01">
+        </testcase>
+        <testcase classname="src/api/types/IllustId.spec.ts" name="IllustIdSchema &gt; 1文字以上でなければならない" time="0.001">
+        </testcase>
+        <testcase classname="src/api/types/IllustId.spec.ts" name="IllustIdSchema &gt; すべて数字でなければならない" time="0.001">
+        </testcase>
+    </testsuite>
+</testsuites>
