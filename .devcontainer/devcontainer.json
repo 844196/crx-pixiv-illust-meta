@@ -1,12 +1,14 @@
 {
-  "name": "crx-pixiv-illust-meta",
+  "name": "${localWorkspaceFolderBasename}",
   "features": {
-    "common": true
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "version": "latest"
+    }
   },
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "workspace",
   "remoteUser": "node",
-  "workspaceFolder": "/workspaces/crx-pixiv-illust-meta",
+  "workspaceFolder": "/code",
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],

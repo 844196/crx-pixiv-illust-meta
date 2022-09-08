@@ -3,8 +3,8 @@ services:
     build:
       context: .
     volumes:
-      - .:/workspaces/crx-pixiv-illust-meta:cached
-      - node_modules:/workspaces/crx-pixiv-illust-meta/node_modules
+      - .:/code:cached
+      - node_modules:/code/node_modules
     tty: true
     init: true
 
