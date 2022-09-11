@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
+        description: version
         required: true
         type: choice
         options:
@@ -18,15 +19,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Read node version from Dockerfile
-        run: echo ::set-output name=node_version::$(grep -P -o '(?<=node:)[0-9]+\.[0-9]+\.[0-9]+' Dockerfile)
-        id: node_version
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ steps.node_version.outputs.node_version }}
-          cache: npm
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Setup git user
         run: |
@@ -45,9 +39,7 @@ jobs:
           git push origin --tags
 
       - name: Build
-        run: |
-          npm ci
-          npm run build
+        run: pnpm build
 
       - name: Copy license file
         run: cp LICENSE.md dist

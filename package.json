@@ -15,11 +15,11 @@
   "license": "MIT",
   "author": "Masaya Takeda <844196@gmail.com>",
   "scripts": {
-    "preinstall": "npx -y only-allow npm",
+    "preinstall": "npx -y only-allow pnpm",
     "start": "vite",
     "lint": "run-s --continue-on-error lint:*",
     "lint:type": "tsc --noEmit",
-    "lint:convention": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "lint:rule": "eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:format": "prettier --check .",
     "test": "vitest",
     "build": "vite build"
@@ -41,6 +41,7 @@
     "@tsconfig/vite-react": "1.0.1",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@types/testing-library__jest-dom": "5.14.5",
     "@typescript-eslint/eslint-plugin": "5.36.2",
     "@typescript-eslint/parser": "5.36.2",
     "@vitejs/plugin-react": "2.0.1",
@@ -65,7 +66,5 @@
     "vitest": "0.23.2",
     "whatwg-fetch": "3.6.2"
   },
-  "engines": {
-    "node": "16.x"
-  }
+  "packageManager": "pnpm@7.11.0"
 }

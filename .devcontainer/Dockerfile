@@ -7,4 +7,6 @@ RUN \
 
 USER node
 
+RUN npm config --location user set store-dir /home/node/.local/share/pnpm/store
+
 WORKDIR /code
