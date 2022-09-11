@@ -1,1 +1,4 @@
+/coverage
 /dist
+/tests/results
+/pnpm-lock.yaml
