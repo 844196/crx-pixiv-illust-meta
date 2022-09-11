@@ -1,14 +1,19 @@
 {
   "name": "${localWorkspaceFolderBasename}",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile",
+    "target": "workspace"
+  },
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder},target=/workspace,consistency=delegated",
+  "mounts": ["type=volume,target=/workspace/node_modules"],
+  "remoteUser": "node",
+  "workspaceFolder": "/workspace",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {
       "version": "latest"
     }
   },
-  "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "workspace",
-  "remoteUser": "node",
-  "workspaceFolder": "/code",
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
@@ -18,8 +23,7 @@
           "source.fixAll.eslint": true
         },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "eslint.runtime": "/usr/local/bin/node"
+        "editor.formatOnSave": true
       }
     }
   }
