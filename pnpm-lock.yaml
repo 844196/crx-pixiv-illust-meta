@@ -37,6 +37,7 @@ specifiers:
   typescript: 4.8.3
   vite: 3.1.0
   vitest: 0.23.2
+  vitest-github-actions-reporter: 0.8.1
   whatwg-fetch: 3.6.2
   zod: 3.19.0
 
@@ -80,9 +81,23 @@ devDependencies:
   typescript: 4.8.3
   vite: 3.1.0
   vitest: 0.23.2_jsdom@20.0.0
+  vitest-github-actions-reporter: 0.8.1_vitest@0.23.2
   whatwg-fetch: 3.6.2
 
 packages:
+
+  /@actions/core/1.9.1:
+    resolution: {integrity: sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==}
+    dependencies:
+      '@actions/http-client': 2.0.1
+      uuid: 8.3.2
+    dev: true
+
+  /@actions/http-client/2.0.1:
+    resolution: {integrity: sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==}
+    dependencies:
+      tunnel: 0.0.6
+    dev: true
 
   /@adobe/css-tools/4.0.1:
     resolution: {integrity: sha512-+u76oB43nOHrF4DDWRLWDCtci7f3QJoEBigemIdIeTi1ODqjx6Tad9NCVnPRwewWlKkVab5PlK8DCtPTyX7S8g==}
@@ -4325,6 +4340,11 @@ packages:
       typescript: 4.8.3
     dev: true
 
+  /tunnel/0.0.6:
+    resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
+    engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
+    dev: true
+
   /type-check/0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}
     engines: {node: '>= 0.8.0'}
@@ -4473,6 +4493,16 @@ packages:
       rollup: 2.78.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /vitest-github-actions-reporter/0.8.1_vitest@0.23.2:
+    resolution: {integrity: sha512-U121wpDOmBgoh/fYj7oTq6ic3RbDWkshWciiT9DVs0TrmHRAyvH0AfBT9Sp0H2OOQY2p9ifimIbF91k1r7BTYg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      vitest: '>=0.16.0'
+    dependencies:
+      '@actions/core': 1.9.1
+      vitest: 0.23.2_jsdom@20.0.0
     dev: true
 
   /vitest/0.23.2_jsdom@20.0.0:

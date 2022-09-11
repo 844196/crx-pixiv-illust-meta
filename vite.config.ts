@@ -4,6 +4,7 @@
 import { crx } from '@crxjs/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import GithubActionsReporter from 'vitest-github-actions-reporter';
 
 import { manifest } from './manifest.config';
 
@@ -14,7 +15,12 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     globalSetup: './vitest.setup.global.ts',
-    reporters: ['default', 'junit'],
+    reporters: [
+      process.env.GITHUB_ACTIONS === 'true'
+        ? new GithubActionsReporter()
+        : 'default',
+      'junit',
+    ],
     outputFile: {
       junit: 'tests/results/results.xml',
     },
