@@ -1,7 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "commitMessagePrefix": ":arrow_up: ",
-  "extends": ["config:base", "docker:disableMajor"],
+  "extends": ["config:base"],
+  "major": {
+    "dependencyDashboardApproval": true
+  },
   "packageRules": [
     {
       "groupName": "react",
