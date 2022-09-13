@@ -23,6 +23,7 @@
       "groupName": "test",
       "matchPackageNames": [
         "vitest",
+        "vitest-github-actions-reporter",
         "jsdom",
         "msw",
         "@mswjs/data",
