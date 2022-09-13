@@ -37,7 +37,7 @@ specifiers:
   typescript: 4.8.3
   vite: 3.1.0
   vitest: 0.23.2
-  vitest-github-actions-reporter: 0.8.1
+  vitest-github-actions-reporter: 0.8.3
   whatwg-fetch: 3.6.2
   zod: 3.19.1
 
@@ -81,7 +81,7 @@ devDependencies:
   typescript: 4.8.3
   vite: 3.1.0
   vitest: 0.23.2_jsdom@20.0.0
-  vitest-github-actions-reporter: 0.8.1_vitest@0.23.2
+  vitest-github-actions-reporter: 0.8.3_vitest@0.23.2
   whatwg-fetch: 3.6.2
 
 packages:
@@ -4559,8 +4559,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest-github-actions-reporter/0.8.1_vitest@0.23.2:
-    resolution: {integrity: sha512-U121wpDOmBgoh/fYj7oTq6ic3RbDWkshWciiT9DVs0TrmHRAyvH0AfBT9Sp0H2OOQY2p9ifimIbF91k1r7BTYg==}
+  /vitest-github-actions-reporter/0.8.3_vitest@0.23.2:
+    resolution: {integrity: sha512-3mpZil8jAiWGt+w5NWzrewcPnXlUiUujMmjeZ0zhcva7cNW6k8DyMIBiq3bRGkhEL1FoG1sHFUj8/ONXnhGvZQ==}
     engines: {node: '>=14'}
     peerDependencies:
       vitest: '>=0.16.0'
