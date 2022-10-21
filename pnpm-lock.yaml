@@ -25,7 +25,7 @@ specifiers:
   eslint-plugin-jsx-a11y: 6.6.1
   eslint-plugin-react: 7.31.10
   eslint-plugin-react-hooks: 4.6.0
-  eslint-plugin-testing-library: 5.9.0
+  eslint-plugin-testing-library: 5.9.1
   jsdom: 20.0.1
   msw: 0.47.4
   npm-run-all: 4.1.5
@@ -73,7 +73,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.25.0
   eslint-plugin-react: 7.31.10_eslint@8.25.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.25.0
-  eslint-plugin-testing-library: 5.9.0_z4bbprzjrhnsfa24uvmcbu7f5q
+  eslint-plugin-testing-library: 5.9.1_z4bbprzjrhnsfa24uvmcbu7f5q
   jsdom: 20.0.1
   msw: 0.47.4_typescript@4.8.4
   npm-run-all: 4.1.5
@@ -2204,8 +2204,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-testing-library/5.9.0_z4bbprzjrhnsfa24uvmcbu7f5q:
-    resolution: {integrity: sha512-iwPz6KNf/qc4rHMGaxn2vmS5snzuOqtia00D0FC2Wcp1xWM3J9w0/YzzrPv/UFHhLG0CwfQodyKmqL5+c6hGgg==}
+  /eslint-plugin-testing-library/5.9.1_z4bbprzjrhnsfa24uvmcbu7f5q:
+    resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6'}
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0
