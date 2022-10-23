@@ -19,7 +19,7 @@ specifiers:
   eslint-config-airbnb: 19.0.4
   eslint-config-airbnb-typescript: 17.0.0
   eslint-config-prettier: 8.5.0
-  eslint-define-config: 1.7.0
+  eslint-define-config: 1.8.0
   eslint-import-resolver-typescript: 3.5.2
   eslint-plugin-import: 2.26.0
   eslint-plugin-jsx-a11y: 6.6.1
@@ -67,7 +67,7 @@ devDependencies:
   eslint-config-airbnb: 19.0.4_43j2huhpnx3hffntymctaqzhgq
   eslint-config-airbnb-typescript: 17.0.0_4a66f5wid7yyfum3u635pldopa
   eslint-config-prettier: 8.5.0_eslint@8.26.0
-  eslint-define-config: 1.7.0
+  eslint-define-config: 1.8.0
   eslint-import-resolver-typescript: 3.5.2_mynvxvmq5qtyojffiqgev4x7mm
   eslint-plugin-import: 2.26.0_66dbmam7x4jttzjgt7jagac5je
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.26.0
@@ -2055,8 +2055,8 @@ packages:
       eslint: 8.26.0
     dev: true
 
-  /eslint-define-config/1.7.0:
-    resolution: {integrity: sha512-13zk8z8eKO4tpPMvAGV0sa6ok0XuMeu7Zhcizu2bLwcLy1fbNt7/h8PU1wbp9IoIgQETggZJozU0nPXUXOao2g==}
+  /eslint-define-config/1.8.0:
+    resolution: {integrity: sha512-YibjbNkHKMo3QAnV3bgc+BdvmYCcCpuoRdAIc+6W/P91G02ZOrCVaPrco9Uf4md25NanjkV2bnfwce8XfPRS7A==}
     engines: {node: '>= 14.6.0', npm: '>= 6.0.0', pnpm: '>= 7.0.0'}
     dev: true
 
