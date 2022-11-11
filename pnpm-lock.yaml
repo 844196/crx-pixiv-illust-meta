@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@crxjs/vite-plugin': 1.0.13
-  '@mswjs/data': 0.10.2
+  '@mswjs/data': 0.11.0
   '@stitches/react': 1.2.8
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0
@@ -26,8 +26,8 @@ specifiers:
   eslint-plugin-react: 7.31.10
   eslint-plugin-react-hooks: 4.6.0
   eslint-plugin-testing-library: 5.9.1
-  jsdom: 20.0.1
-  msw: 0.47.4
+  jsdom: 20.0.2
+  msw: 0.48.1
   npm-run-all: 4.1.5
   prettier: 2.7.1
   react: 18.2.0
@@ -36,8 +36,8 @@ specifiers:
   swr: 1.3.0
   typescript: 4.8.4
   vite: 3.2.3
-  vitest: 0.24.3
-  vitest-github-actions-reporter: 0.8.3
+  vitest: 0.25.1
+  vitest-github-actions-reporter: 0.9.0
   whatwg-fetch: 3.6.2
   zod: 3.19.1
 
@@ -52,7 +52,7 @@ dependencies:
 
 devDependencies:
   '@crxjs/vite-plugin': 1.0.13_vite@3.2.3
-  '@mswjs/data': 0.10.2_typescript@4.8.4
+  '@mswjs/data': 0.11.0_typescript@4.8.4
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@tsconfig/vite-react': 1.0.1
@@ -62,7 +62,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.42.1_2udltptbznfmezdozpdoa2aemq
   '@typescript-eslint/parser': 5.42.1_rmayb2veg2btbq6mbmnyivgasy
   '@vitejs/plugin-react': 2.2.0_vite@3.2.3
-  '@vitest/coverage-c8': 0.25.1_jsdom@20.0.1
+  '@vitest/coverage-c8': 0.25.1_jsdom@20.0.2
   eslint: 8.27.0
   eslint-config-airbnb: 19.0.4_gto5osv3xpxagsgraksq5y7ohi
   eslint-config-airbnb-typescript: 17.0.0_um3jpch3v3dsc7kuwqks6afcja
@@ -74,20 +74,20 @@ devDependencies:
   eslint-plugin-react: 7.31.10_eslint@8.27.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.27.0
   eslint-plugin-testing-library: 5.9.1_rmayb2veg2btbq6mbmnyivgasy
-  jsdom: 20.0.1
-  msw: 0.47.4_typescript@4.8.4
+  jsdom: 20.0.2
+  msw: 0.48.1_typescript@4.8.4
   npm-run-all: 4.1.5
   prettier: 2.7.1
   typescript: 4.8.4
   vite: 3.2.3
-  vitest: 0.24.3_jsdom@20.0.1
-  vitest-github-actions-reporter: 0.8.3_vitest@0.24.3
+  vitest: 0.25.1_jsdom@20.0.2
+  vitest-github-actions-reporter: 0.9.0_vitest@0.25.1
   whatwg-fetch: 3.6.2
 
 packages:
 
-  /@actions/core/1.9.1:
-    resolution: {integrity: sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==}
+  /@actions/core/1.10.0:
+    resolution: {integrity: sha512-2aZDDa3zrrZbP5ZYg159sNoLRb61nQ7awl5pSvIq5Qpj81vwDzdMRKzkWJGJuwVvWpvZKx7vspJALyvaaIQyug==}
     dependencies:
       '@actions/http-client': 2.0.1
       uuid: 8.3.2
@@ -552,8 +552,8 @@ packages:
       set-cookie-parser: 2.5.1
     dev: true
 
-  /@mswjs/data/0.10.2_typescript@4.8.4:
-    resolution: {integrity: sha512-L6AGyse4GjFfyF9OI7AfYtcLbALN5MZQSvSr7p48wj6zlrrrgIKGkRVf9IEEfqaWimKP31mJDdHhie3lfJQ4SQ==}
+  /@mswjs/data/0.11.0_typescript@4.8.4:
+    resolution: {integrity: sha512-Gxwfand2QuU6/B+0z91bzS3JYDTt1pskzFyO8IivvAagADQM+/s0pvJcw8/BBBRGYCHKlh32N/dD27FWo110jg==}
     dependencies:
       '@types/lodash': 4.14.184
       '@types/md5': 2.3.2
@@ -566,7 +566,7 @@ packages:
       md5: 2.3.0
       outvariant: 1.3.0
       pluralize: 8.0.0
-      strict-event-emitter: 0.2.4
+      strict-event-emitter: 0.2.6
       uuid: 8.3.2
     optionalDependencies:
       msw: 0.48.1_typescript@4.8.4
@@ -1045,11 +1045,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-c8/0.25.1_jsdom@20.0.1:
+  /@vitest/coverage-c8/0.25.1_jsdom@20.0.2:
     resolution: {integrity: sha512-gpl5QNaNeIN0mfRiosCqBFoZcizb5GA458TDnOQXkGDc4kklazxn70u9evGfV62wiiAUfGGebgRhxlBkAa6m6g==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.1_jsdom@20.0.1
+      vitest: 0.25.1_jsdom@20.0.2
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -3149,8 +3149,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom/20.0.1:
-    resolution: {integrity: sha512-pksjj7Rqoa+wdpkKcLzQRHhJCEE42qQhl/xLMUKHgoSejaKOdaXEAnqs6uDNwMl/fciHTzKeR8Wm8cw7N+g98A==}
+  /jsdom/20.0.2:
+    resolution: {integrity: sha512-AHWa+QO/cgRg4N+DsmHg1Y7xnz+8KU3EflM0LVDTdmrYOc1WWTSkOjtpUveQH+1Bqd5rtcVnb/DuxV/UjDO4rA==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -3422,43 +3422,6 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw/0.47.4_typescript@4.8.4:
-    resolution: {integrity: sha512-Psftt8Yfl0+l+qqg9OlmKEsxF8S/vtda0CmlR6y8wTaWrMMzuCDa55n2hEGC0ZRDwuV6FFWc/4CjoDsBpATKBw==}
-    engines: {node: '>=14'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      typescript: '>= 4.2.x <= 4.8.x'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@mswjs/cookies': 0.2.2
-      '@mswjs/interceptors': 0.17.5
-      '@open-draft/until': 1.0.3
-      '@types/cookie': 0.4.1
-      '@types/js-levenshtein': 1.1.1
-      chalk: 4.1.1
-      chokidar: 3.5.3
-      cookie: 0.4.2
-      graphql: 16.6.0
-      headers-polyfill: 3.1.0
-      inquirer: 8.2.4
-      is-node-process: 1.0.1
-      js-levenshtein: 1.1.6
-      node-fetch: 2.6.7
-      outvariant: 1.3.0
-      path-to-regexp: 6.2.1
-      statuses: 2.0.1
-      strict-event-emitter: 0.2.6
-      type-fest: 2.19.0
-      typescript: 4.8.4
-      yargs: 17.5.1
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: true
-
   /msw/0.48.1_typescript@4.8.4:
     resolution: {integrity: sha512-lnhIsC5aQOpqu5CjJ11CPl6RYGbY9+LhZZw1zKX3S710O9qGQ7kftmfX1FifmZNk2FuKoygprKITSfqHWpE5LQ==}
     engines: {node: '>=14'}
@@ -3495,7 +3458,6 @@ packages:
       - encoding
       - supports-color
     dev: true
-    optional: true
 
   /mute-stream/0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
@@ -4219,12 +4181,6 @@ packages:
     engines: {node: '>= 0.3.0'}
     dev: true
 
-  /strict-event-emitter/0.2.4:
-    resolution: {integrity: sha512-xIqTLS5azUH1djSUsLH9DbP6UnM/nI18vu8d43JigCQEoVsnY+mrlE+qv6kYqs6/1OkMnMIiL6ffedQSZStuoQ==}
-    dependencies:
-      events: 3.3.0
-    dev: true
-
   /strict-event-emitter/0.2.6:
     resolution: {integrity: sha512-qDZOqEBoNtKLPb/qAutkXUt7hs3zXgYA1xX4pVa+gZHCZZVLr2r81AzHsK5YrQQhRNphMtkOUyAyOr9e1IxJTw==}
     dependencies:
@@ -4380,10 +4336,6 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
-    dev: true
-
-  /tinybench/2.3.0:
-    resolution: {integrity: sha512-zs1gMVBwyyG2QbVchYIbnabRhMOCGvrwZz/q+SV+LIMa9q5YDQZi2kkI6ZRqV2Bz7ba1uvrc7ieUoE4KWnGeKg==}
     dev: true
 
   /tinybench/2.3.1:
@@ -4662,60 +4614,17 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest-github-actions-reporter/0.8.3_vitest@0.24.3:
-    resolution: {integrity: sha512-3mpZil8jAiWGt+w5NWzrewcPnXlUiUujMmjeZ0zhcva7cNW6k8DyMIBiq3bRGkhEL1FoG1sHFUj8/ONXnhGvZQ==}
-    engines: {node: '>=14'}
+  /vitest-github-actions-reporter/0.9.0_vitest@0.25.1:
+    resolution: {integrity: sha512-tCC9exD0HLH4oTdZBuAMapwkVU9RAcU2GpbtO4a5nqYG4Ty2LW61z90srbWqk3rZHL8IxGo2WfL8r7U+EeeYug==}
+    engines: {node: '>=14.16.0'}
     peerDependencies:
       vitest: '>=0.16.0'
     dependencies:
-      '@actions/core': 1.9.1
-      vitest: 0.24.3_jsdom@20.0.1
+      '@actions/core': 1.10.0
+      vitest: 0.25.1_jsdom@20.0.2
     dev: true
 
-  /vitest/0.24.3_jsdom@20.0.1:
-    resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
-    engines: {node: '>=v14.16.0'}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@vitest/browser': '*'
-      '@vitest/ui': '*'
-      happy-dom: '*'
-      jsdom: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-    dependencies:
-      '@types/chai': 4.3.3
-      '@types/chai-subset': 1.3.3
-      '@types/node': 18.7.16
-      chai: 4.3.6
-      debug: 4.3.4
-      jsdom: 20.0.1
-      local-pkg: 0.4.2
-      strip-literal: 0.4.2
-      tinybench: 2.3.0
-      tinypool: 0.3.0
-      tinyspy: 1.0.2
-      vite: 3.2.3_@types+node@18.7.16
-    transitivePeerDependencies:
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
-  /vitest/0.25.1_jsdom@20.0.1:
+  /vitest/0.25.1_jsdom@20.0.2:
     resolution: {integrity: sha512-eH74h6MkuEgsqR4mAQZeMK9O0PROiKY+i+1GMz/fBi5A3L2ml5U7JQs7LfPU7+uWUziZyLHagl+rkyfR8SLhlA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4744,7 +4653,7 @@ packages:
       acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
-      jsdom: 20.0.1
+      jsdom: 20.0.2
       local-pkg: 0.4.2
       source-map: 0.6.1
       strip-literal: 0.4.2
