@@ -1,4 +1,4 @@
-FROM node:16.18.1-bullseye as workspace
+FROM node:16.20.2-bullseye as workspace
 
 RUN \
   corepack enable && \
